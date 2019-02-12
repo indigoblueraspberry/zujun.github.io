@@ -1,0 +1,156 @@
+/**********************************
+Reset
+***********************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;}
+
+/**********************************
+Block-level
+***********************************/
+p {color: #404040;}
+ul li {color: #404040;}
+
+h1, h2, h3, h4, h5 {padding: 0.5em 0; font-weight: normal; font-family: Georgia, "Times New Roman", Times, serif;}
+h1 {font-size: 2.2em;}
+h2 {font-size: 1.9em;}
+h3 {font-size: 1.4em;}
+
+code {color: #08c;line-height: 1.0em; font-family: Monaco, "Andale Mono", "Courier New", monospace; font-size: 0.94em;}
+blockquote {font-size: inherit; margin: 0em 3em 0.5em 4em; font: normal 1.1em/1.6em "Courier New";}
+
+pre {font-size: inherit;font: normal 1.0em/1.6em "Courier New";}
+
+
+strong {font-weight: bold}
+em {font-style: italic}
+
+
+/********************************
+Global
+*********************************/
+/*Removal of underline and addition of border-bottom for links */
+a {text-decoration: none; border-bottom: 1px dotted #000; color: #111}
+a:focus {outline:1px #8a887d dotted}
+a:hover {color: #820000;}
+hr {background:#eae9e6; border:0; clear:both; height:1px}
+img {border: none}
+body {color: #404040; background: #fff url("../images/blocksandstonebg_grainy.png") repeat top left; line-height: 1.2em; font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;}
+
+/********************************
+Top Navigation Bar
+*********************************/
+
+#top_navbar {margin: 0px 0px 0px 0px; width: auto; background: #920000 url("../images/topbar_red.png") repeat-x top left; letter-spacing: 0.3em; padding-top: 5px; padding-left: 14px; padding-bottom: 6px; text-align: left; font: normal 10px "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; color: #eaeae6; text-transform: uppercase; border-bottom: 3px solid #fff;}
+#top_navbar ul {min-width: 400px; margin: 0px 1% -3px 5%;}
+#top_navbar li {display: inline; color: #eaeae6; padding-right: 0.1em;}
+#top_navbar li a {color: #eaeae6; border-bottom: 1px dotted #aaa;}
+#top_navbar li a:hover {color: #eaeae6; border-bottom: 1px dotted #fff;}
+
+
+
+
+
+/*********************************
+Top Navigation Bar - Aslett Clearing Method (forces height to expand to include optional content)
+**********************************/
+#top_navbar:after {content: "."; display: block; height: 2px; clear: both; visibility: hidden;}
+
+/********************************
+Content Container
+*********************************/
+#content_container {margin: 10px 5% 8px 5%; padding: 10px; min-width: 860px;}
+
+/*********************************
+Content Container - Aslett Clearing Method (forces border below all floated elements)
+**********************************/
+#content_container:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+/********************************
+Page Title - Main Header
+*********************************/
+#page_title_area {margin: -2px 0px 18px 0px; min-width: 860px; padding-top: 6px; padding-left: 11px; padding-right: 10px; padding-bottom: 0em; background: #fff url("../images/sandstone_topborder.png") repeat-x top left; -moz-border-radius: 6px; -webkit-border-radius: 6px; border: 2px solid #f6eada; border-top: none;}
+#page_title_leftcontent {float: left;}
+#page_title_leftcontent_lamp {float: left; background: url("../images/quad_lamp_graphic.png") no-repeat top left; padding-left: 38px;}
+#page_title_rightcontent {float: right; padding-top: 0px;}
+#page_title_leftcontent h1 {margin-left: -2px; padding-top: 20px; padding-bottom: 5px; font-family: Georgia, "Times New Roman", Times, serif; display: block; float: left;}
+#page_title_leftcontent_lamp h1 {margin-left: 1px; padding-top: 20px; padding-bottom: 0px; font-family: Georgia, "Times New Roman", Times, serif; line-height: 46px; display: block; float: left;}
+#page_title_area ul {padding-top: 8px; padding-bottom: 0.5em; display: block; clear: left; background-color: transparent;}
+/*#page_title_leftcontent li {letter-spacing: 0.1em; text-align: left; font: normal 0.6em/1.6em "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; text-transform: uppercase; color: #556; list-style-type: none;}*/
+#page_title_leftcontent li {letter-spacing: 0.1em; text-align: left; font: normal 1.0em/1.6em "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; color: #404040; list-style-type: none;}
+#page_title_leftcontent_lamp li {letter-spacing: 0.1em; text-align: left; font: normal 0.6em/1.6em "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; text-transform: uppercase; color: #404040; list-style-type: none; margin-left: 4px;}
+#page_title_leftcontent_lamp ul {padding-top: 0px; padding-bottom: 0.5em; display: block; clear: left; background-color: transparent;}
+#page_title_rightcontent li {letter-spacing: 0.1em; text-align: right; font: normal 0.6em/1.6em "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; text-transform: uppercase; color: #404040; list-style-type: none;}
+
+#page_title_leftcontent lj {letter-spacing: 0.1em; text-align: left; font: normal 0.9em/1.6em "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; color: #820000; list-style-type: none;}
+#page_title_leftcontent_lamp lj {letter-spacing: 0.1em; text-align: left; font: normal 0.6em/1.6em "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; text-transform: uppercase; color: #820000; list-style-type: none; margin-left: 4px;}
+
+.page_title_area_lower {clear: both; margin-bottom: 0.5em; letter-spacing: 0.2em; text-align: left; font: italic 0.7em/1.6em "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; text-transform: uppercase; color: #820000;}
+.page_title_area_lower_nav {margin-bottom: 0.5em; letter-spacing: 0.2em; text-align: left; font: normal 0.6em/0.8em "Helvetica Neue", Helvetica, Verdana, Geneva, sans-serif; text-transform: uppercase; color: #820000; padding-top: 0px;}
+.page_title_area_lower_nav ul {min-width: 400px; margin: 0px 15% 0px 5%;}
+.page_title_area_lower_nav li {display: inline; padding-right: 0.1em; font-weight: bold;}
+.page_title_area_lower_nav li a {border: none; font-weight: normal; padding-bottom: 1px;}
+.page_title_area_lower_nav li a:hover {color: #820000; border-bottom: 1px dotted #820000;}
+
+/*********************************
+Page Title Area - - Aslett Clearing Method (forces border below all floated elements)
+**********************************/
+#page_title_area:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+/*********************************
+Center Content Area
+**********************************/
+#content {margin: 0px auto 15px auto; width: 69%; float: left; padding-bottom: 20px; padding: 10px; background: #fff url("../images/sandstone_topborder.png") repeat-x top left; -moz-border-radius: 6px; -webkit-border-radius: 6px; border: 2px solid #f6eada; border-top: none; font-size: 0.80em; display: block; z-index: 3;}
+#content ol {padding-left: 1.8em; list-style-position: inside; padding-bottom: 0.78em;}
+#content ul {padding-left: 1.8em; list-style-position: inside; padding-bottom: 0.78em;}
+#content dl {padding: 0; list-style-position: inside;}
+#content dt {font-weight: bold; padding-top: 0.5em;}
+#content dd {font-size: inherit; padding: 0 2em;} 
+#content li {font-size: inherit;}
+#content p  {padding-bottom: 0.78em;}
+
+p.indent  {text-indent: 2em;}
+
+.leading_above_onehalf {padding-top: 0.5em;} 
+.leading_above_one {padding-top: 1em;} 
+.leading_below_onehalf {padding-bottom: 0.5em;} 
+.leading_below_one {padding-bottom: 1em;} 
+
+.margin_pullquote {display: block; position: relative; float: right; margin: -0.5em -264px 0 34px; padding: 10px 0px 2px 14px; width: 224px; border-left: 14px hidden #f6eada; font: inherit; font-style: italic; font-size: 18px; line-height: 22px; text-indent: 36px; background: transparent url("../images/pullquote_bg.png") no-repeat top left; color: #888;}
+.margin_pullquote img {display: inline; vertical-align: top; border: none;}
+
+.margin_comment {display: block; position: relative; float: right; margin: 0.5em -286px 0 10px; padding: 3px 8px 3px 14px; width: 224px; border: 2px solid #f6eada; border-left: 12px solid #f6eada; border-right: 16px solid #f6eada; font: inherit; font-size: 0.88em; line-height: 1.4em; text-indent: 0em; background-color: #fff; color: #555;}
+
+cite {display: block; position: relative; float: right; margin: 0.3em -275px 0 10px; padding: 2px 1em 0.5em 28px; width: 221px; border: 1px solid #f6eada; border-left: 2px solid transparent; font-size: 0.82em; line-height: 1.3em; text-indent: 0em; background: #fff url("../images/sandstone_sidenote_flag_bg.png") no-repeat top left; font-style: normal;}
+.cite_number_intext {vertical-align: super; font-size: 0.8em; line-height: 0.8em;}
+.cite_number_innotes {position: absolute; top: -3px; left: 15px; padding-right: 5px; font-size: 0.9em; text-align: right;}
+
+/*********************************
+Sidebar
+**********************************/
+#sidebar {padding: 10px; float: left; max-width: 24%; margin: 0px -7% 10px 15px; background: #fff url("../images/sandstone_topborder.png") repeat-x top left; -moz-border-radius: 6px; -webkit-border-radius: 6px; border: 2px solid #f6eada; border-top: none; font-size: 0.78em; display: block; z-index: 2;}
+#sidebar h3 {color: #820000; font-size: 0.82em; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2em 0 0 0;}
+#sidebar div {margin-bottom: 15px;}
+#sidebar ul {padding-bottom: 5px;}
+#sidebar li {list-style-image: url("../images/raquo.gif"); margin-left: 15px; line-height: 2em; font-size: 1em;}
+
+/**********************************
+Sidebar Stanford Seal
+***********************************/
+#seal {width: 160px; height: 129px; margin: 20px auto 0px auto; background-image: url("../images/seal.gif"); background-repeat: no-repeat;}
+#splice {width: 300px; height: 100px; background-image: url("../images/splice-1.png"); background-repeat: no-repeat;}
+/*********************************
+Sidebar - Aslett Clearing Method (forces border below all floated elements)
+**********************************/
+#sidebar:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+/**********************************
+Footer
+***********************************/
+#footer {display: block; clear: both; margin: 10px 0px 18px 0px; min-width: 860px; padding-top: 3px; padding-left: 10px; padding-right: 10px; padding-bottom: 3px; background-color: #fff; -moz-border-radius: 6px; -webkit-border-radius: 6px; border: 2px solid #f6eada; font-size: 0.9em;}
+#footer ul {text-align: center; margin-right: 1.5em;}
+#footer li {display: inline; padding-left: 0.5em; list-style-type: none; font-size: smaller;}
+
+/**********************************
+Aslett Clearing Method
+***********************************/
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
