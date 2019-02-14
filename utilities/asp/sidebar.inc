@@ -18,7 +18,7 @@
       <br><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-ASE/IDP-ASE_download_current.asp"><img src="images/download.png">IDP-ASE 20161017</a> (<a href="http://www.healthcare.uiowa.edu/labs/au/IDP-ASE/IDP-ASE_download_current.asp#0.1">notes</a>)</li>
           
     <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/">IDP-fusion</a> - Fusion Isoform Detection and Prediction
-      <br><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/"><img src="images/download.png">IDP-fusion </a> (<a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/IDP-fusion_download_current.asp#0.1">notes</a>)</li>
+      <br><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/"><img src="images/download.png">IDP-fusion 1.1.1 </a> (<a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/IDP-fusion_download_current.asp#0.1">notes</a>)</li>
       
  
     <li><a href="http://www.healthcare.uiowa.edu/labs/au/LSC/">LSC</a> - Rapid error correction tool for PacBio data 
