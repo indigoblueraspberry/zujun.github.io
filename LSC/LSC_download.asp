@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>LSC download</title>
+  <!-- #include file ="asp\header.inc" -->
+  <!-- #include file ="asp\all_track.inc" -->
+</head>
+
+<body>
+
+<!-- #include file ="asp\redbar.inc" -->
+<div id="content_container">
+  <!-- PAGE TITLE AREA AND BOX -->
+  <!-- #include file ="asp\titlearea.inc" -->
+
+
+
+  <!-- END PAGE TITLE AREA AND BOX -->
+  <div id="content">
+    <h2>Downloads</h2>
+    <p>
+    Copyright and installation instructions are contained within the package. We <b>strongly
+    recommend</b> that you consult the <a href="LSC_tutorial.asp">tutorial</a> before attempting to use LSC. 
+    </p>
+    
+    <table border="1" cellpadding="7">
+    <tr>
+    <td>
+    <a href="files/LSC-2.0.tar.gz" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 2.0 (current)</b></a>
+    </td>
+     <td><a href="LSC_download.asp#2.0">release notes</a>
+    </td>
+    <td><a href="LSC_manual.asp">Manual (current)</a></td>
+    <td><a href="LSC_tutorial.asp">Tutorial (current)</a></td>
+
+    </tr>
+
+    <tr>
+    <td>
+    <a href="files/LSC_1_beta.rar" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 1.beta</b></a>
+    </td>
+     <td><a href="LSC_download.asp#1.beta">release notes</a>
+    </td>
+    <td><a href="LSC_manual_1.x.asp">Manual 1.beta</a></td>
+    <td><a href="LSC_tutorial_1.x.asp">Tutorial 1.beta</a></td>
+
+    </tr>
+  
+    <tr>
+    <td>
+    <a href="files/LSC_1_alpha.rar" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 1.alpha</b></a>
+    </td>
+     <td><a href="LSC_download.asp#1.alpha">release notes</a>
+    </td>
+    <td><a href="LSC_manual_1.x.asp">Manual 1.beta</a></td>
+    <td><a href="LSC_tutorial_1.x.asp">Tutorial 1.beta</a></td>
+    </tr>
+
+    <tr>
+    <td>
+    <a href="files/LSC_0.3.1.rar" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 0.3.1</b></a>
+    </td>
+     <td>
+<a href="LSC_download.asp#0.3.1">release notes</a>
+    </td>
+    <td><a href="LSC_manual_0.3.1.asp">Manual 0.3.1</a></td>
+    <td><a href="LSC_tutorial_0.3.1.asp">Tutorial 0.3.1</a></td>
+    </tr>
+
+    <tr>
+    <td>
+    <a href="files/LSC_0.3.rar" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 0.3</b></a>
+    </td>
+     <td>
+<a href="LSC_download.asp#0.3">release notes</a>
+    </td>
+    <td><a href="LSC_manual_0.3.1.asp">Manual 0.3.1</a></td>
+    <td><a href="LSC_tutorial_0.3.1.asp">Tutorial 0.3.1</a></td>
+
+    </tr>
+	
+    <tr>
+    <td>
+    <a href="files/LSC_0.2.4.rar" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 0.2.4</b></a>
+    </td>
+     <td>
+<a href="LSC_download.asp#0.2.4">release notes</a>
+    </td>
+        <td><a href="LSC_manual_0.3.1.asp">Manual 0.3.1</a></td>
+    <td><a href="LSC_tutorial_0.3.1.asp">Tutorial 0.3.1</a></td>
+    </tr>	
+	
+    <tr>
+    <td>
+    <a href="files/LSC_0.2.3.rar" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 0.2.3</b></a>
+    </td>
+     <td><a href="LSC_download.asp#0.2.3">release notes</a>
+    </td>
+    <td><a href="LSC_manual_0.3.1.asp">Manual 0.3.1</a></td>
+    <td><a href="LSC_tutorial_0.3.1.asp">Tutorial 0.3.1</a></td>
+
+    </tr>	
+	
+    <tr>
+    <td>
+    <a href="files/LSC_0.2.2.rar" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 0.2.2</b></a>
+    </td>
+     <td><a href="LSC_download.asp#0.2.2">release notes</a>
+    </td>
+    <td><a href="LSC_manual_0.3.1.asp">Manual 0.3.1</a></td>
+    <td><a href="LSC_tutorial_0.3.1.asp">Tutorial 0.3.1</a></td>
+
+    </tr>
+	
+    <tr>
+    <td>
+    <a href="files/LSC_0.2.1.zip" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 0.2.1</b></a>
+    </td>
+     <td><a href="LSC_download.asp#0.2.1">release notes</a>
+    </td>
+    <td><a href="LSC_manual_0.3.1.asp">Manual 0.3.1</a></td>
+    <td><a href="LSC_tutorial_0.3.1.asp">Tutorial 0.3.1</a></td>
+    </tr>
+ 
+    <tr>
+    <td>
+    <a href="files/LSC_0.2.rar" onClick="ga('send', 'event', 'file download', 'click', 'LSC code download');"><img src="images/download.png"><b>LSC 0.2</b></a>
+    </td>
+     <td><a href="LSC_download.asp#0.2">release notes</a></td>
+    <td><a href="LSC_manual_0.3.1.asp">Manual 0.3.1</a></td>
+    <td><a href="LSC_tutorial_0.3.1.asp">Tutorial 0.3.1</a></td>
+    </tr>
+    
+    </table>
+
+
+
+  <div id="2.0">
+   <h3><img src="images/dna.png">  <b>LSC 2.0</b> - Release Notes</h3>
+    </div>
+<ul>
+<li>Removed the requirement for long reads to be in a Pacific Biosciences format.</li>
+
+<li>Removed PacBio specific long read processing.</li>
+
+<li>Removed support for aligners BWA, RazerS3 and Novoalign.  Please contact us if these would be useful.</li>
+
+<li>Removed the use of run.cfg files.</li>
+
+<li>Removed support for Mac OSX.  Nothing specifically was written to specifically disable Mac functionality, but use on Mac OSX functionality has not been tested for this version and should not be expected to function.</li>
+
+<li>Added command line argument support.  runLSC.py could minimally be run with --long_reads and --short_reads and --output specified.  Access to other parameters are available through command line arguments.</li>
+
+<li>Added a multi-stage execution modes.  This makes parallelization on a cluster much easier to implement.
+  <ul>
+  <li>0: default – end to end run</li>
+  <li>1: Prepare compressed short reads, and compressed and indexed batches of long reads.</li>
+  <li>2: Execute correction on all the batches. or</li>
+  <li>2 (alternate) use --parallelized_mode_2 X: Execute correction on one batch (X).</li>
+  <li>3: Combine outputs from mode 2 to produce final outputs.</li>
+  </ul>
+</li>
+<li>Added the parameter --long_read_batch_size X option so that you can specify how many long reads will be corrected in each batch.</li>
+
+<li>Added support for hisat, but parameters have not been optimized and bowtie2 performs best.</li>
+
+<li>Added samtools as a requirement, that is also included as a linux executable binary.  If the software is not installed under 'samtools' or specified by the user, then the packaged version of samtools will be used.  This drastically reduces the size of intermediate files produced from alignments.</li>
+
+<li>Added options for a specific temporary directory --specific_tempdir that can be used to specify where to store intermediate files if you want to keep them.  This parameter is required when running in step-by-step modes i.e. 1,2,3 rather than just 0.  Otherwise --tempdir can be used to specify where to store temporary files that will eventually be removed.  If neither are specified the /tmp directory will be used by default.</li>
+
+<li>Added a utilities folder.  Now it is the new home of filter_corrected_reads.py, and some sequence parsing files called by the main LSC program.</li>
+</ul>
+
+  <div id="1.beta">
+   <h3><img src="images/dna.png">  <b>LSC 1.beta</b> - Release Notes</h3>
+    </div>
+  <p>
+  <i><u> Feature Updates:</u></i> 
+  </p>     
+    <ul>
+    <li>
+  Updating aligners default command options to gain better performance. 
+  <ul>
+    <li> Updated Novoalign command options (tested with >= novocraftV3.02.04 version) </li>
+  <li> Updated RazerS3 command options to be compatible with latest version (razers3 3.1.1) </li>
+  </ul>
+  </li>
+    <li>
+  Added extra clean_up option value to remove all generated intermiediate files in case of issues w/ disk space
+  </ul>
+  
+
+  <p>
+  <i><u> Bug Fixes:</u></i> 
+  </p> 
+  <ul>
+  <li>
+  Fix a bug in generating full_LR.fa sequences causing some full read sequences to miss couple of bases
+  </li>
+  </ul>
+
+
+  
+     <div id="1.alpha">
+   <h3><img src="images/dna.png">  <b>LSC 1.alpha</b> - Release Notes</h3>
+    </div>
+	<p>
+	In the LSC 0.3.0 or 0.3.1, we optimized the setting of bowtie2 and BWA to get much more short read alignment, which improve the the accuracy of error correction a lot/
+	However, the increase of alignments also requires much more running time (on both alignment and the following error correction step) and memory usage. 
+	Therefore, a few users met difficulty of running LSC 0.3.0 or 0.3.1.
+	</p>
+	<p>
+	In LSC 1.alpha, we apply probabilistic algorithm ("SCD" option) to select ""enough" short read alignment for error correction.
+	LSC 1.alpha does NOT sacrifice the error correction performace (sensitivity and specificity). Please see <a href="LSC_manual.html#aligner">http://www.healthcare.uiowa.edu/labs/au/LSC/LSC_manual.html#aligner</a>
+	Thus, we save running time and memory usage significantly.
+	<b>The running time is 30-50% of LSC 0.3.1. The peak memory usage decreases to ~10G regardless of the data size.</b>
+	</p>
+
+	<p>
+	<i><u> New features:</u></i> 
+	</p>     
+    <ul>
+    <li>
+	<b>Added probabilistic algorithm ("SCD" option) to pre-select SR alignments results based on LR-SR alignment coverage depth (Significant improvement in running time and memory usage)</b>
+    </li>
+	<li>
+	Removed requirement for loading SR dataset in memory to generate LR-SR mapping file (Significant improvement in <b>memory usage</b>)
+	</li>
+	<li>
+	Added option "sort_max_mem" in run.cfg to control maximum memory used by unix sort command to avoid unexpected Mem crash 
+	</li>
+    </ul>
+	
+	<p>
+	<i><u>Miscellaneous changes:</u></i> 
+	</p> 
+	<ul>
+	
+	<li>Fixed a bug in generating FASTQ file (it affected some of QualityValue computation results)
+	</li>
+	
+    </ul>
+	<p>
+	If you want to see the manual and tutorial of the old LSC (before 1.alpha), we keep the links of its the <a href="LSC_manual_0.3.1.asp">Old manual</a> and <a href="LSC_tutorial_0.3.1.asp">Old tutorial</a> in the right side bar.
+	</p>
+	
+	
+    <div id="0.3.1">
+   <h3><img src="images/dna.png">  <b>LSC 0.3.1</b> - Release Notes</h3>
+    </div>
+	<p>
+	In LSC 0.3.1, we don't have pseudo chromosome, the alignment time reduced to ~10% (in Bowtie2 mode). And you can re-run some crashed jobs easily now.
+	</p>
+	<p>
+	<i><u> New features:</u></i> 
+	</p>     
+    <ul>
+    <li>
+	Remove pseudo-chr processing
+    </li>
+	<li>
+	Accept compressed SR as input (should be named SR.fa.cps/SR.fa.cps.idx in any folder)
+
+	</li>
+	<li>
+	Added "runLSC -cleanup" option to remove redundant files (per thread split, remaining _tmp files) if the run was successful at the end. 
+	</li>
+	
+	<li>Changed convertNav to sort reads and then generate LR_SR.map (memory optimization instead of loading all alignments in memory)
+    </ul>
+
+	
+	<p>
+	<i><u>Miscellaneous changes:</u></i> 
+	</p> 
+	<ul>
+	<li>
+	Changed "print" to system.echo (messages were not printed out in qsub output files)
+	</li>
+	<li>
+	Changed a little bit "cleanup" option to keep per thread data (*.aa, *.ab, ..). It was useful when one thread was crashed and we wanted to just re-run that at the end
+	</li>
+    </ul>
+
+
+    <div id="0.3">
+   <h3><img src="images/dna.png">  <b>LSC 0.3</b> - Release Notes</h3>
+    </div>
+	<p>
+	In LSC 0.3, we have a few updates. They are very IMPORTANT updates, new features and small fixes
+	</p>
+	<p>
+	<i><u> Very IMPORTANT updates:</u></i> 
+	</p>     
+    <ul>
+    <li>
+	Support for RazerS3 and Bowtie2 as initial aligners. Now, BWA, Bowtie2, RazerS3 and Novoalign work in LSC.
+    </li>
+	<li>
+	Added SR length coverage percentage on LR (SR-covered length/full length of corrected LR) to corrected_LR output file. Here is an example, where the last number 0.82 is the SR length coverage percentage on LR:  
+    <ul><FONT FACE="arial"><i>
+	>m111006_202713_42141_c100202382555500000315044810141104_s1_p0/18941/365_1361|<b>0.82</b></i>
+	</FONT> 
+    </ul>
+	</li>
+	<li>
+	Added support for three modes for step-wise runs:
+	</li>
+	<ul><font face="Comic sans MS" size="2"><ul><b>mode 0</b>: end-to-end</ul> <ul><b>mode 1</b>: generating LR_SR.map file</ul> <ul><b>mode 2</b>: correction step</ul></b></font>
+	</ul>
+	
+	<li>Generating fastq output format
+	<ul>
+  Using the correction probability given coverage in the LSC paper and fitted a log function to it and then used the probability values to compute Sanger quality score:  33 - 10 * log10(1 - p).
+   For the locations: </ul>
+
+   <ul>  - without any SR coverage I  used the default quality score of p = 0.725 (the same in your paper).</ul>
+   <ul>  - with SR coverage but without any correction point, I used the number of covered SRs</ul>
+   <ul>  - with SR coverage in a correction point (either because of compression or mismatch), I used number of SRs that had similar sequence with the substitute bases 
+         (i.e. the number of covered SRs that have the max number of similar sequence not the total number covered SRs.)</ul>
+		 
+   </li>	
+	</ul>
+	
+	<p>
+	<i><u>New features</u></i> 
+	</p> 
+	<ul>
+	<li>
+	Used the python path in the cfg file instead of default user\bin path
+	</li>
+	<li>
+	Added option (-clean_up) to remove intermediate files or not (Note:  important/useful ones will still be there in temp folder)
+	</li>
+	<li>
+	Support for input fastq format for LR (long reads) and/or SR (short reads)
+	</li>
+	<li>
+	Updated default BWA and novoalign commands options 
+	</li>
+	<li>
+	Printing out original LR names in the output file
+	</li>
+	<li> 
+	Support for printing out version number and (-v/-version) option
+    </li>
+	</ul>
+	
+	<p>
+	<i><u> Small fixes</u></i> 
+	</p> 
+	<ul>
+	
+    <li>
+	Fixed in removing XZ pattern from end of uncorrected_LR file
+	</li> 
+	<li>
+	Fixed samParser bug (which was ignoring some valid alignments in case of BWA)
+    </li>
+	</ul>
+
+		
+	
+    <div id="0.2.4">
+   <h3><img src="images/dna.png">  <b>LSC 0.2.4</b> - Release Notes</h3>
+    </div>
+	<p>
+	1. Besides the default aligner Novoalign, BWA can be also used as the initial aligner from this version. Please find the new aligner options in the webpage <a href="LSC_cfg.asp"> ".cfg file format"</a>
+    </p>
+	<p>
+	2. Some uncertain corrections may exsit at the right ends of the long reads in the old LSC. LSC 0.2.4 settles this problem and likely improves the accuracy further.
+    </p>	
+	
+    <div id="0.2.3">
+   <h3><img src="images/dna.png">  <b>LSC 0.2.3</b> - Release Notes</h3>
+    </div>
+	<p>
+ 
+   If you run LSC at the bin folder (the bin folder is the work directory) or set the bin as the default path, then you may meet a bug. LSC 0.2.3 fixes this bug of finding the correct bin folder. <br>
+    </p>
+	
+	
+	
+    <div id="0.2.2">
+    <h3><img src="images/dna.png">  <b>LSC 0.2.2</b> - Release Notes</h3>
+    </div>
+    <p>
+   LSC 0.2.2 fixes the bug of the option "I_RemoveBothTails". LSC 0.2.1 ran this option even if you set "N". 
+   It may halt the process in LSC 0.2.1 because the read name does not allow "RemoveBothTails".
+   Now you can choose to use this option or not.
+    </p>
+	
+    <div id="0.2.1">
+    <h3><img src="images/dna.png">  <b>LSC 0.2.1</b> - Release Notes</h3>
+    </div>
+    <p>
+   LSC 0.2.1 fixes the bug of python path. Another bug of removing redundant reads is also fixed. 
+   LSC takes a long read data sets (>=100bp) and a short reads data sets (50 - 100bp) as input. They should be in FASTA format.
+   Running time is almost linear with the the number of threads.
+    </p>
+    <ul>
+    <li>Python (version 2.6 or higher) should be installed in the default user bin "#!/usr/bin/python"</li>
+    <li>Novoalign should be in your default path. The version V2.07.10 is recommended.</li>
+    <li>A new option of using nonredandunt reads that save ~40% running time</li>
+    </ul>
+
+    </p>
+
+
+    <h3><img src="images/dna.png">  <b>LSC 0.2</b> - Release Notes</h3>
+    <p>
+   LSC 0.2 takes a long read data sets (>=100bp) and a short reads data sets (50 - 100bp) as input. They should be in FASTA format.
+   Running time is almost linear with the the number of threads.
+    </p>
+    <ul>
+    <li>More optional for raw data prefilter</li>
+    <li>Multi-threading is avaiable</li>
+    <li>Reduced redundant temp files</li>
+    </ul>
+
+    </p>
+  </div>
+  
+  
+
+  
+<!-- #include file ="asp\sidebar.inc" -->
+<!-- #include file ="asp\footer.inc" -->
+
+<!-- end #content -->
+</body>
+
+
+</html>
