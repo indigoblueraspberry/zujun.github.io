@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<!-- MAKE YOUR CONTENT MORE ACCESSIBLE BY INCLUDING MACHINE-READABLE METADATA IN YOUR XHTML CODE - USE STANFORD'S DUBLIN CORE METADATA GENERATOR AT http://soap.stanford.edu/plugins/dublincore -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Long read files</title>
+<link rel="stylesheet" type="text/css" href="styles/flex_textfont_sans.css" media="all" />
+<!-- SANDSTONE AND TILE TEMPLATE (FLEXIBLE-WIDTH, SANS-SERIF TEXT FONT VERSION) PROVIDED BY STANFORD UNIVERSITY INFORMATION TECHNOLOGY SERVICES FOR NON-DEPARTMENTAL OR UNOFFICIAL USE BY STANFORD FACULTY, STAFF AND STUDENTS. DESIGNED IN 2009 BY DAVE REAM, IT SERVICES. FOR POLICIES AND GUIDELINES ON ACCESSIBILITY, COPYRIGHT, AND ON THE USE OF STANFORD'S NAME AND TRADEMARKS, INCLUDING THE UNIVERSITY SEAL, SEE http://soap.stanford.edu, http://www.stanford.edu/group/identity, and http://adminguide.stanford.edu --> 
+
+</head>
+<body>
+
+ <!-- include virtual="redbar.inc" -->
+
+<!--BEGIN TOP RED BAR -->
+<div id="top_navbar">
+  <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
+   <ul>
+    <li>This hESC transcriptome iS identified by <a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a>-<a href="http://www.healthcare.uiowa.edu/labs/au/LSC/">LSC</a>-<a href="http://www.healthcare.uiowa.edu/labs/au/IDP/">IDP</a> pipeline</li>
+  </ul>
+  <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
+</div>
+<!-- END TOP RED BAR -->
+
+
+<div id="content_container">
+  <!-- PAGE TITLE AREA AND BOX -->
+  
+  <div id="page_title_area">
+    <!-- STANDARD PAGE TITLE; NO DECORATIVE GRAPHIC -->
+    <!-- <div id="page_title_leftcontent"> -->
+    <div id="page_title_leftcontent">
+      <h1>hESC transcriptome</h1>
+      <ul>
+        <li>This Human Embryonic Stem Cell <br>(hESC, H1 cell line) <br>transcriptome is identified by <a href="http://www.stanford.edu/group/wonglab/SpliceMap/"><b>SpliceMap</b></a>-<a href="http://www.healthcare.uiowa.edu/labs/au/LSC/"><b>LSC</b></a>-<a href="http://www.healthcare.uiowa.edu/labs/au/IDP/"><b>IDP</b></a> pipeline<br>
+
+      </ul>
+    </div>
+    
+    <div id="page_title_rightcontent">
+  <ul>
+
+
+      <li>&nbsp;</li>
+
+    <li><img src="images/IDP.png" width="300" >&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    
+  </ul>
+    </div>
+    
+    
+  </div>
+
+
+  <!-- PAGE TITLE LEFT CONTENT WITH OPTIONAL QUAD LAMP DECORATION; UN-COMMENT TO USE -->
+<!--<div id="page_title_leftcontent_lamp">
+		<h1>University Affiliate, Ph.D.</h1>
+		<ul><li>Professor of Lorem Ipsum</li><li>School of Dolor Sit Amet</li></ul>
+		<ul class="page_title_area_lower_nav"><li><a href="">breadcrumb</a></li><li>&raquo; <a href="">breadcrumb</a></li><li>&raquo; <a href="">breadcrumb</a></li></ul>
+		</div>
+		<div id="page_title_rightcontent">
+			<ul><li>Invidunt ut labore</li><li>Congue nihil imperdiet</li><li>Sed diam nonumy eirmod tempor</li><li>aliquam erat volutpat</li><li>doming id quod mazim placerat</li></ul>
+		</div>
+	</div>
+-->
+
+<div id="content">
+<h2>Steps to generate long read files suitable for isoform prediction or fusion detection</h2>
+<ol>
+  <br>
+  <li>Generate a FASTA file of all sub reads with > .75 accuracy
+	<br>&nbsp&nbsp&nbsp&nbsp<b>SMRT analysis package</b></li>
+
+  <br><li>Generate a FASTA file of all ccs reads with > .95 accuracy
+	<br>&nbsp&nbsp&nbsp&nbsp<b>SMRT analysis package</b></li>
+
+  <br><li>Generate a FASTA file of all ccs reads with > .9 accuracy
+	<br>&nbsp&nbsp&nbsp&nbsp<b>SMRT analysis package</b></li>
+
+  <br><li>Get the longest sub read from each molecule.  Use the outputs from <b>step #1</b> as an input.
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp<b>Au-public/iron/utilities/
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsppacbio_get_longest_fasta_per_molecule.pl &ltsub75fasta&gt</b></li>
+
+  <br><li>Construct a set of reads that excludes any ccs reads with > 0.95 accuracy but that includes ccs reads with greater than 0.9 accuracy and less than 0.95 accuracy.  And any remaining > 0.75 longest sub reads not yet considered.  Use the outputs from <b>step #2</b>, <b>step #3</b>, and <b>step #4</b> as inputs. 
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp<b>Au-public/iron/utilities/
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsppacbio_make_ccs90-95_sub75_set.py &ltcc95fasta&gt &ltccs90fasta&gt &ltsub75fasta&gt</b></li>
+
+  <br><li>Perform LSC on the FASTA output from <b>step #5</b>.  Subsequent steps will use the following outputs:
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp<b>corrected_LR.fa
+	<br>&nbsp&nbsp&nbsp&nbsp&nbspfull_LR.fa</b></li>
+
+  <br><li>Replace <b>corrected_LR.fa</b> entries with <b>full_LR.fa</b> entries when the length of the corrected is 90% or greater the length of the <b>full_LR.fa</b>.  The purpose is to maintain the adaptor sequences when possible.
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp<b>IDP/utilities/
+	<br>&nbsp&nbsp&nbsp&nbsp&nbspreplace_LSC_corrected_with_full_when_similar_length.py &ltfull_LR.fa&gt &ltcorrected_LR.fa&gt &ltthreshold (i.e. 0.9)&gt  &ltoutput fasta&gt &ltoutput list&gt</b></li>
+
+  <br><li>Assemble a non-redundant set of reads for fusion detection that includes the high quality ccs reads from <b>step #2</b>, the reads that were used as an input to LSC (output of <b>step #5</b>), this allows us to recover any reads that were not operated on by LSC, and finally, the swapped <b>FASTA output from step #7</b> 
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp<b>Au-public/iron/utilities/
+	<br>&nbsp&nbsp&nbsp&nbsp&nbspassemble_IDP-fusion_read_set.pl &ltccs95 fasta&gt &ltpre-LSC fasta&gt &ltLSC swapped fasta&gt</b> </li>
+
+  <br><li>Assemble a set of reads for isoform prediction that includes both the corrected_LR.fa and full_LR.fa entries in cases when the length of the corrected is within 90% the length of the full_LR.fa.  This introduces some redundancies that will be removed during the execution of IDP isoform prediction since actual quantifications will be based on the short read counts.  Similar to <b>step #8</b>, this step requires the high quality ccs reads from <b>step #2</b>, the reads that were used as an input to LSC (output of <b>step #5)</b>, the full_LR.fa output from LSC in <b>step #6</b>, the swapped <b>FASTA output from step #7</b>, and the <b>list output from step #7</b>.
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp<b>Au-public/iron/utilities/
+	<br>&nbsp&nbsp&nbsp&nbsp&nbspassemble_IDP-isoform_read_set.pl &ltccs95 fasta&gt pre-LSC fasta&gt &ltfull_LR.fa&gt &ltLSC swapped fasta&gt &ltLSC swapped list&gt</b> </li>
+</ol>
+
+</div>
+
+
+
+<div id="sidebar">
+    <h2>Site Map</h2>
+    <ul>
+      <li><a href="hESC.asp">Home</a></li>
+      <li><a href="hESC_Gene_isoform_detection_and_prediction.asp">Gene isoform detection and prediction</a></li>
+      <li><a href="hESC_hESC-specific_novel_genes.asp">hESC-specific novel genes</a></li>
+      <li><a href="hESC_Novel_gene_isoforms.asp">Novel gene isoforms</a></li>
+    <li><a href="hESC_Quantification_of_isoform_abundance.asp">Quantification of isoform abundance</a></li>
+    <li><a href="hESC_Isoforms_of_pluripotent_stem_cell_markers.asp">Isoforms of pluripotent stem cell markers</a></li>
+    <li><a href="hESC_ncRNA_identification.asp">ncRNA identification</a></li>
+    <li><a href="hESC_Data.asp">Data</a></li>
+    
+    </ul>
+    <h3>Help</h3>
+    <ul>
+    <li><a href="hESC_gpd_format.asp">GPD format</a></li>
+      <li><a href="hESC_howitworks.asp">How it works?</a></li>
+      <li><a href="http://www-stage.healthcare.uiowa.edu/labs/au/IDP/hESC_long_read_file_guide.html">Generate long read files</a></li>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/utility_script.asp">Utilities</a></li>
+      <li><a href="hESC_faq.asp">FAQ</a></li>
+      <li><a href="hESC_contact.asp">Contact</a></li>
+    </ul>
+
+    <h2>Useful links</h2>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/">Au Lab</a> - Au Lab homepage </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> - Novel splice junction discovery</li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/LSC/LSC.html">LSC</a> - Error correction of PacBio long reads </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/">IDP</a> - Isoform Detection and Prediction  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.asp">hESC transcriptome</a> - hESC transcriptome by IDP </li>
+    </ul>
+
+
+
+    <br><ul><center><img src="images/seal.gif" width="75%" hight="75%"><center></ul>
+  </div>
+
+
+
+
+<div id="footer">
+    <ul>
+      <li>&copy; <a href=" http://www.healthcare.uiowa.edu/labs/au/index.asp">Kin Fai Au</a>. All Rights Reserved.</li>
+      <li><a href=" http://www.uiowa.edu/">University of Iowa</a>, IA 52242.</li>
+    </ul>
+</div>
+  
+    
+<!-- end #content -->
+</body>
+
+  <!-- include virtual="analytics.inc" -->
+
+</html>
