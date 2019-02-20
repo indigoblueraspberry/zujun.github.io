@@ -27,7 +27,7 @@
 <div id="top_navbar">
   <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
    <ul>
-    <li>IDP IS DEVELOPED BY <a href="http://www.healthcare.uiowa.edu/labs/au/">KIN FAI AU</a> with help from collaborators</li>
+    <li>IDP IS DEVELOPED BY <a href="http://www.augroup.org">KIN FAI AU</a> with help from collaborators</li>
   </ul>
   <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
 </div>
@@ -59,7 +59,7 @@
 	</ul>
     </div>
 
-<p class="page_title_area_lower">Latest News:  IDP 0.1.6 major update is released ... <a href="default.asp#news">read more</a></p>
+<p class="page_title_area_lower">Latest News:  IDP 0.1.6 major update is released ... <a href="default.html#news">read more</a></p>
     
     
   </div>
@@ -68,19 +68,19 @@
   <div id="content">
     <h2>Manual</h2>
     <ul>
-    <li><a href="IDP_manual.asp#install">Installation</a></li>
-    <li><a href="IDP_manual.asp#using">Using IDP</a></li>
+    <li><a href="IDP_manual.html#install">Installation</a></li>
+    <li><a href="IDP_manual.html#using">Using IDP</a></li>
     <li>Module descriptions
     <ul>
-        <li><a href="IDP_manual.asp#runIDP">runIDP.py</a></li>
+        <li><a href="IDP_manual.html#runIDP">runIDP.py</a></li>
     </ul>
     </li><li>Input files</li>
     <ul>
-        <li><a href="IDP_manual.asp#longreads">Long reads</a></li>
-		<li><a href="IDP_manual.asp#shortreads">Short reads</a></li>
+        <li><a href="IDP_manual.html#longreads">Long reads</a></li>
+		<li><a href="IDP_manual.html#shortreads">Short reads</a></li>
     </ul>	
-    </li><li><a href="IDP_manual.asp#output">Output files</a></li>
-    <li><a href="IDP_manual.asp#time">Execution Time</a></li>
+    </li><li><a href="IDP_manual.html#output">Output files</a></li>
+    <li><a href="IDP_manual.html#time">Execution Time</a></li>
     </ul>
     
     <div id="install">
@@ -89,14 +89,14 @@
     <p>No explicit installation is required for IDP, however it does have some pre-requistes. </p> 
     <p>Long reads should be corrected with LSC first, and the corrected.fa and full.fa files should be concatonated into a single fasta for use in IDP i.e.: <br><i>$ cat full.fa corrected.fa > LR.fa</i></p>
     <p>Short reads should be aligned to the reference genome using SpliceMap.  An alignment (.sam) file and SpliceMap format bed file is required.</p>
-	<p>Please see IDP <a href="IDP_requirements.asp">requirements</a> for more details about required software.  </p>
+	<p>Please see IDP <a href="IDP_requirements.html">requirements</a> for more details about required software.  </p>
     <p></p>
     
     
     <div id="using">
     <h3><img src="images/dna.png"> Using IDP</h3>
     </div>
-    <p>Firstly, see the <a href="IDP_tutorial.asp">tutorial</a> on how to use IDP on some example data.</p>
+    <p>Firstly, see the <a href="IDP_tutorial.html">tutorial</a> on how to use IDP on some example data.</p>
     <p>
     In order to use IDP on your own data:
     </p><ol>
@@ -104,16 +104,16 @@
     
     <li>Copy "run.cfg" from the IDP package to the working directory. </li>
     
-    <li><a href="IDP_cfg.asp">Edit run.cfg</a> to include paths to data files and the paths of the temp folder and the output folder. 
+    <li><a href="IDP_cfg.html">Edit run.cfg</a> to include paths to data files and the paths of the temp folder and the output folder. 
 	You may also want to configure the default settings. Reference annotation can be used in IDP for isoform candidate constructions. In this construction process, a few parameters are needed as well. 
     For these parameters, the example run.cfg contained in the bin/ directory of the program contains the optimal setting for human transcriptome.
-	If you want to run the other species, please <a href="IDP_contact.asp">contact</a> Kin Fai for suggestion.
+	If you want to run the other species, please <a href="IDP_contact.html">contact</a> Kin Fai for suggestion.
 	</li>
     <li>Edit "constants.py" for a few "data parameters". Please see the section "Module: constants.py" below for more details</li>	
-    <li>Execute "<a href="IDP_manual.asp#runIDP">/home/user/IDP_path/runIDP.py run.cfg mode_number</a>" while in your working directory. or Execute "<a href="IDP_manual.asp#runIDP">runIDP.py run.cfg mode_number</a>, if all IDP executable files are in the default bin.
+    <li>Execute "<a href="IDP_manual.html#runIDP">/home/user/IDP_path/runIDP.py run.cfg mode_number</a>" while in your working directory. or Execute "<a href="IDP_manual.html#runIDP">runIDP.py run.cfg mode_number</a>, if all IDP executable files are in the default bin.
 "mode_number" can be 1,2,3. Please see how to select mode_number in the section "Module: runIDP.py" below.</li>
 
-    <li>After <a href="IDP_manual.asp#time">a certain time</a> execution will conclude. You can find results in the "output" directory. </li>
+    <li>After <a href="IDP_manual.html#time">a certain time</a> execution will conclude. You can find results in the "output" directory. </li>
     
     </ol>
     <p></p>
@@ -124,8 +124,8 @@
     </div>
     <p>"runIDP.py" is the main program in the IDP package. It calls other modules 
     to run the full isoform identification and quantification on your data. Output is written to the "output" folder. 
-    Details of the output are described in <a href="IDP_manual.asp#fileformats">file formats</a>.
-    Its options are described in <a href="IDP_cfg.asp">run.cfg</a>. You just need to run "runIDP.py" with a configuration file "run.cfg" and a mode_number: </p>
+    Details of the output are described in <a href="IDP_manual.html#fileformats">file formats</a>.
+    Its options are described in <a href="IDP_cfg.html">run.cfg</a>. You just need to run "runIDP.py" with a configuration file "run.cfg" and a mode_number: </p>
     <blockquote>
     /home/user/IDP_path/runIDP.py run.cfg mode_number
     </blockquote>
@@ -179,7 +179,7 @@ redundancies will be handled by IDP.</p>
 # You can input one of three types of long-read data: 
 	# 1. Long-read alignments on reference genome in GPD format. 
 	# If you has run IDP on the same data, you can use LR.gpd in the previous temp folder.
-	# For more info of GPD format, please check http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp
+	# For more info of GPD format, please check http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.html
 
 LR_gpd_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/no53primer_LR.gpd
 
@@ -227,7 +227,7 @@ SR_sam_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/good_hits.sam
     <li><i>isoform.gpd</i></li>
     
     <dd> This file contains all gene isoforms identified from detection or prediction. There are overlap between detection and prediction, so isoform.gpd removes the redundant ones. 
-	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>. 
+	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.html">gpd format</a>. 
 	  </dd>
 	  </ul>
 	  
@@ -241,7 +241,7 @@ SR_sam_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/good_hits.sam
 	 <ul>
     <li><i>isoform_detection.gpd</i></li> 
 	<dd> This file contains the detections of gene isoforms annotated in the reference annotation (ref_annotation_pathfilename in run.cfg). 
-	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>. 
+	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.html">gpd format</a>. 
 	</dd>
 	  
 	</ul>  
@@ -277,12 +277,12 @@ SR_sam_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/good_hits.sam
 <div id="sidebar">
     <h2>Site Map</h2>
     <ul>
-      <li><a href="default.asp">Home</a></li>
+      <li><a href="IDP.html">Home</a></li>
       
-      <li><a href="IDP_download_current.asp">Downloads</a></li>
-      <li><a href="IDP_contact.asp">Contact</a></li>
-      <li><a href="IDP_requirements.asp">Requirements</a></li>
-      <li><a href="IDP_faq.asp">FAQ</a></li>
+      <li><a href="IDP_download_current.html">Downloads</a></li>
+      <li><a href="IDP_contact.html">Contact</a></li>
+      <li><a href="IDP_requirements.html">Requirements</a></li>
+      <li><a href="IDP_faq.html">FAQ</a></li>
   
     </ul>
     <h3>Help</h3>
@@ -290,14 +290,14 @@ SR_sam_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/good_hits.sam
       
      
 
-      <li><a href="IDP_manual.asp">Manual</a></li>
-      <li><a href="IDP_tutorial.asp">Tutorial</a></li>
+      <li><a href="IDP_manual.html">Manual</a></li>
+      <li><a href="IDP_tutorial.html">Tutorial</a></li>
       
     </ul>
     <h2>Download</h2>
     <h3>Current release</h3>
     <ul>
-      <li><a href="IDP_download_current.asp"><img src="images/download.png"> IDP 0.1.9</a> (<a href="IDP_download_current.asp#notes">notes</a>)</li>
+      <li><a href="IDP_download_current.html"><img src="images/download.png"> IDP 0.1.9</a> (<a href="IDP_download_current.html#notes">notes</a>)</li>
     </ul>
 
         <h2>Useful links</h2>
@@ -320,7 +320,7 @@ SR_sam_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/good_hits.sam
       <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
     </ul>
     <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.asp">hESC transcriptome</a> - hESC transcriptome by IDP </li>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.html">hESC transcriptome</a> - hESC transcriptome by IDP </li>
     </ul>
     <ul>
       <li><a href="http://www.healthcare.uiowa.edu/labs/au/AlignQC/">AlignQC</a> - Check an alignment, assess error patterns, and make reports </li>
