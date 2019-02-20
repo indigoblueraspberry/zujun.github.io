@@ -19,19 +19,19 @@
   <div id="content">
     <h2>Manual</h2>
     <ul>
-    <li><a href="IDP_manual.asp#install">Installation</a></li>
-    <li><a href="IDP_manual.asp#using">Using IDP</a></li>
+    <li><a href="IDP_manual.html#install">Installation</a></li>
+    <li><a href="IDP_manual.html#using">Using IDP</a></li>
     <li>Module descriptions
     <ul>
-        <li><a href="IDP_manual.asp#runIDP">runIDP.py</a></li>
+        <li><a href="IDP_manual.html#runIDP">runIDP.py</a></li>
     </ul>
     </li><li>Input files</li>
     <ul>
-        <li><a href="IDP_manual.asp#longreads">Long reads</a></li>
-		<li><a href="IDP_manual.asp#shortreads">Short reads</a></li>
+        <li><a href="IDP_manual.html#longreads">Long reads</a></li>
+		<li><a href="IDP_manual.html#shortreads">Short reads</a></li>
     </ul>	
-    </li><li><a href="IDP_manual.asp#output">Output files</a></li>
-    <li><a href="IDP_manual.asp#time">Execution Time</a></li>
+    </li><li><a href="IDP_manual.html#output">Output files</a></li>
+    <li><a href="IDP_manual.html#time">Execution Time</a></li>
     </ul>
     
     <div id="install">
@@ -47,7 +47,7 @@
     <div id="using">
     <h3><img src="images/dna.png"> Using IDP</h3>
     </div>
-    <p>Firstly, see the <a href="IDP_tutorial.asp">tutorial</a> on how to use IDP on some example data.</p>
+    <p>Firstly, see the <a href="IDP_tutorial.html">tutorial</a> on how to use IDP on some example data.</p>
     <p>
     In order to use IDP on your own data:
     </p><ol>
@@ -55,16 +55,16 @@
     
     <li>Copy "run.cfg" from the IDP package to the working directory. </li>
     
-    <li><a href="IDP_cfg.asp">Edit run.cfg</a> to include paths to data files and the paths of the temp folder and the output folder. 
+    <li><a href="IDP_cfg.html">Edit run.cfg</a> to include paths to data files and the paths of the temp folder and the output folder. 
 	You may also want to configure the default settings. Reference annotation can be used in IDP for isoform candidate constructions. In this construction process, a few parameters are needed as well. 
     For these parameters, the example run.cfg contained in the bin/ directory of the program contains the optimal setting for human transcriptome.
-	If you want to run the other species, please <a href="IDP_contact.asp">contact</a> Kin Fai for suggestion.
+	If you want to run the other species, please <a href="IDP_contact.html">contact</a> Kin Fai for suggestion.
 	</li>
     <li>Edit "constants.py" for a few "data parameters". Please see the section "Module: constants.py" below for more details</li>	
-    <li>Execute "<a href="IDP_manual.asp#runIDP">/home/user/IDP_path/runIDP.py run.cfg mode_number</a>" while in your working directory. or Execute "<a href="IDP_manual.asp#runIDP">runIDP.py run.cfg mode_number</a>, if all IDP executable files are in the default bin.
+    <li>Execute "<a href="IDP_manual.html#runIDP">/home/user/IDP_path/runIDP.py run.cfg mode_number</a>" while in your working directory. or Execute "<a href="IDP_manual.html#runIDP">runIDP.py run.cfg mode_number</a>, if all IDP executable files are in the default bin.
 "mode_number" can be 1,2,3. Please see how to select mode_number in the section "Module: runIDP.py" below.</li>
 
-    <li>After <a href="IDP_manual.asp#time">a certain time</a> execution will conclude. You can find results in the "output" directory. </li>
+    <li>After <a href="IDP_manual.html#time">a certain time</a> execution will conclude. You can find results in the "output" directory. </li>
     
     </ol>
     <p></p>
@@ -75,8 +75,8 @@
     </div>
     <p>"runIDP.py" is the main program in the IDP package. It calls other modules 
     to run the full isoform identification and quantification on your data. Output is written to the "output" folder. 
-    Details of the output are described in <a href="IDP_manual.asp#fileformats">file formats</a>.
-    Its options are described in <a href="IDP_cfg.asp">run.cfg</a>. You just need to run "runIDP.py" with a configuration file "run.cfg" and a mode_number: </p>
+    Details of the output are described in <a href="IDP_manual.html#fileformats">file formats</a>.
+    Its options are described in <a href="IDP_cfg.html">run.cfg</a>. You just need to run "runIDP.py" with a configuration file "run.cfg" and a mode_number: </p>
     <blockquote>
     /home/user/IDP_path/runIDP.py run.cfg mode_number
     </blockquote>
@@ -178,7 +178,7 @@ SR_sam_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/good_hits.sam
     <li><i>isoform.gpd</i></li>
     
     <dd> This file contains all gene isoforms identified from detection or prediction. There are overlap between detection and prediction, so isoform.gpd removes the redundant ones. 
-	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>. 
+	It is in <a href="http://www.augroup.org/IDP/IDP_gpd_format.html">gpd format</a>. 
 	  </dd>
 	  </ul>
 	  
@@ -192,7 +192,7 @@ SR_sam_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/good_hits.sam
 	 <ul>
     <li><i>isoform_detection.gpd</i></li> 
 	<dd> This file contains the detections of gene isoforms annotated in the reference annotation (ref_annotation_pathfilename in run.cfg). 
-	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>. 
+	It is in <a href="http://www.augroup.org/IDP/IDP_gpd_format.html">gpd format</a>. 
 	</dd>
 	  
 	</ul>  
