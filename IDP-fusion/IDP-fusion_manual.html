@@ -1,0 +1,405 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <!-- include virtual="header.inc" -->
+ 
+<head>
+  <title>IDP manual</title>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="styles/flex_textfont_sans.css" media="all" />
+<!-- SANDSTONE AND TILE TEMPLATE (FLEXIBLE-WIDTH, SANS-SERIF TEXT FONT VERSION) PROVIDED BY STANFORD UNIVERSITY INFORMATION TECHNOLOGY SERVICES FOR NON-DEPARTMENTAL OR UNOFFICIAL USE BY STANFORD FACULTY, STAFF AND STUDENTS. DESIGNED IN 2009 BY DAVE REAM, IT SERVICES. FOR POLICIES AND GUIDELINES ON ACCESSIBILITY, COPYRIGHT, AND ON THE USE OF STANFORD'S NAME AND TRADEMARKS, INCLUDING THE UNIVERSITY SEAL, SEE http://soap.stanford.edu, http://www.stanford.edu/group/identity, and http://adminguide.stanford.edu --> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50750315-1', 'uiowa.edu');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!--BEGIN TOP RED BAR -->
+<div id="top_navbar">
+  <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
+   <ul>
+    <li>IDP-fusion IS DEVELOPED BY <a href="http://www.healthcare.uiowa.edu/labs/au/">KIN FAI AU</a> with help from collaborators</li>
+  </ul>
+  <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
+</div>
+<!-- END TOP RED BAR -->
+
+<div id="content_container">
+  <!-- PAGE TITLE AREA AND BOX -->
+    <div id="page_title_area">
+    <!-- STANDARD PAGE TITLE; NO DECORATIVE GRAPHIC -->
+    <!-- <div id="page_title_leftcontent"> -->
+    <div id="page_title_leftcontent">
+      <h1>IDP-fusion</h1>
+      <ul>
+        <li>IDP-fusion is a tool for <b>Isoform Detection and Prediction for Fusion Genes</b> <br> from Second Generation Sequencing and PacBio sequencing. 
+        It offers very <br> reliable gene isoform identification 
+		with high sensitivity <br>
+
+      </ul>
+    </div>
+    
+    <div id="page_title_rightcontent">
+	<ul>
+
+
+	    <li>&nbsp;</li>
+
+		<li><img src="images/IDP-fusion.png" width="300" >&nbsp;&nbsp;&nbsp;&nbsp;</li>
+		
+	</ul>
+    </div>
+
+<p class="page_title_area_lower">Latest News:  IDP-fusion_20161024 is released <a href="default.asp#news">read more</a></p>
+    
+    
+  </div>
+  
+  <!-- END PAGE TITLE AREA AND BOX -->
+  <div id="content">
+    <h2>Manual</h2>
+    <ul>
+    <li><a href="IDP_manual.asp#install">Installation</a></li>
+    <li><a href="IDP_manual.asp#using">Using IDP</a></li>
+    <li>Module descriptions
+    <ul>
+        <li><a href="IDP_manual.asp#runIDP">runIDP.py</a></li>
+    </ul>
+    </li><li>Input files</li>
+    <ul>
+        <li><a href="IDP_manual.asp#longreads">Long reads</a></li>
+		<li><a href="IDP_manual.asp#shortreads">Short reads</a></li>
+    </ul>	
+    </li><li><a href="IDP_manual.asp#output">Output files</a></li>
+    <li><a href="IDP_manual.asp#time">Execution Time</a></li>
+    </ul>
+    
+    <div id="install">
+    <h3><img src="images/dna.png"> Installation</h3>
+    </div>
+    <p>No explicit installation is required for IDP, however it does have some pre-requistes. </p> 
+    <p>Please see IDP-fusion <a href="IDP-fusion_requirements.asp">requirements</a> for more details about required software.  </p>
+    <div id="preparing">
+    <h3><img src="images/dna.png"> Preparing Data</h3>
+    </div>
+    <p>Long reads should be corrected with LSC first.</p>
+    <p>See the <a href="IDP-fusion_long_read_file_guide.asp">long read processing guide</a> for information on how assemble a reliable set of long reads</p>
+    <p>Short reads should be aligned to the reference genome using SpliceMap.  An alignment (.sam) file and SpliceMap format bed file is required.</p>
+    <p>Please see IDP-fusion <a href="IDP-fusion_requirements.asp">requirements</a> for more details about required data files.  </p>
+    <p></p>
+    
+    
+    <div id="using">
+    <h3><img src="images/dna.png"> Using IDP</h3>
+    </div>
+    <p>Firstly, see the <a href="IDP_tutorial.asp">tutorial</a> on how to use IDP on some example data.</p>
+    <p>
+    In order to use IDP on your own data:
+    </p><ol>
+    <li>Create an empty directory, this will be the working directory.  An example directory with a manifest of necessary datafiles can be downloaded here:<a href="files/MCF7_chr17q23-25chr20q13_Example.zip"><img src="images/download.png">Example working directory</a>.</li>
+    
+    <li>Copy "run.cfg" from the IDP package to the working directory. </li>
+    
+    <li><a href="IDP_cfg.asp">Edit run.cfg</a> to include paths to data files and the paths of the temp folder and the output folder. 
+	You may also want to configure the default settings. Reference annotation can be used in IDP for isoform candidate constructions. In this construction process, a few parameters are needed as well. 
+    For these parameters, the run.cfg included with the software contains the optimal setting for human transcriptome.
+	If you want to run the other species, please <a href="IDP_contact.asp">contact</a> Kin Fai for suggestion.
+	</li>
+    <li>Edit "constants.py" for a few "data parameters". Please see the section "Module: constants.py" below for more details</li>	
+    <li>Execute "<a href="IDP_manual.asp#runIDP">/home/user/IDP_path/runIDP.py run.cfg mode_number</a>" while in your working directory. or Execute "<a href="IDP_manual.asp#runIDP">runIDP.py run.cfg mode_number</a>, if all IDP executable files are in the default bin.
+"mode_number" can be 1,2,3. Please see how to select mode_number in the section "Module: runIDP.py" below.</li>
+
+    <li>After <a href="IDP_manual.asp#time">a certain time</a> execution will conclude. You can find results in the "output" directory. </li>
+    
+    </ol>
+    <p></p>
+   
+    
+    <div id="runIDP">
+    <h3><img src="images/dna.png"> Module: runIDP.py</h3>
+    </div>
+    <p>"runIDP.py" is the main program in the IDP package. It calls other modules 
+    to run the full isoform identification and quantification on your data. Output is written to the "output" folder. 
+    Details of the output are described in <a href="IDP_manual.asp#fileformats">file formats</a>.
+    Its options are described in <a href="IDP_cfg.asp">run.cfg</a>. You just need to run "runIDP.py" with a configuration file "run.cfg" and a mode_number: </p>
+    <blockquote>
+    /home/user/IDP_path/runIDP.py run.cfg mode_number
+    </blockquote>
+	Please always type the full path of the bin folder in the command line. In this example, you need "/home/user/IDP_path/runIDP.py" instead of "./runIDP.py" or "runIDP.py".
+	<ul><li>Mode_number</li>
+	You can run IDP in two steps by setting the second argument in the command line. 
+	If for a reason IDP finished isoform candidate construction step but was terminated in candidate selection step, you can restart the candidate selection step without re-running the isoform candidate construction.
+	<ul><li>mode 0 (default): end-to-end IDP run.</li>
+	    <li>mode 1: generates isoform candidate pool (file: isoform_construction.NisoXX.gpd) which is used in candidate selection step. "XX" is Niso_limit you set in the run.cfg</li>
+		<li>mode 2: runs candidate selection step. Note:  make sure isoform candidate pool (file: isoform_construction.NisoXX.gpd) file is already generated in temp folder.
+		            IDP also uses some other intermediate files in temp folder which are generated after mode 0/1 run </li>
+	</ul>
+    </ul>
+	
+    <div id="longreads">
+    <h3><img src="images/dna.png"> Input files: long reads</h3>
+    </div>
+    <p>
+    IDP accepts long-read sequences/alignment files and short-read alignment file as input. 
+	<br> The file locations and their format should be set in run.cfg file.
+    </p>
+    <br>
+    <p>Using long reads corrected by LSC first is advised.<br>
+        <b><font color = "red">Please concatenate the LSC outputs: corrected.fa with full.fa, and use this new fasta
+file as your long read inputs for IDP.</font color></b><br>
+
+The reason is that corrected.fa will lose some flanking sequences on
+the long reads that were not corrected by short reads, and there still
+may be some informative junctions in that region.  If we used only
+corrected.fa, we could lose this information.  full.fa includes those
+flanking regions in addition to the corrections that were made.
+However, if we used only full.fa, it is likely the IDP algorithm could
+throw out many of those long reads for failing to find short read
+support for junctions in those regions.  If you combine the two
+datasets, you will not suffer any loss of information, and any
+redundancies will be handled by IDP.</p>
+<br>
+	<p>Three types of long read data can be input: 1. alignment in gpd format, 2. alignment in psl format and 3. sequences of raw data and reference genome:</p>
+	<dd>1. alignment in gpd format. If the long read alignment is done by BLAT and is in psl format, 
+	you can select the best alignment of each long read by the IDP module blat_best.py and then use psl2genephed.py to convert the psl file to gpd file. "skip_Nine" in both modules can help you skip the header lines.
+	or If you have run IDP on a given long read data, then you can copy the file "LR.gpd" from the temp folder for the other run.</dd>
+	<br>
+	<dd>2. alignment in psl format. You can BLAT your long reads to reference genome and the output is in psl format.
+	But you need to select one (the best) alignment of each long reads. The IDP module blat_best.py can help you select the alignment with most bases mapped. "skip_Nine" in blat_best.py can help you skip the header lines.</dd>
+	<br>
+	<dd>3. sequences of raw data and reference genome. You can input the long read sequences (FASTA format) and the reference genome (FASTA format). IDP can do the alignment by BLAT and the remaining steps for you.
+	This is much handier and just takes a bit longer running time. <b>If you know the adapter/primer sequences at 5'/3' ends, IDP can trim them. But you need to input their homopolyer-compressed sequences.</b></dd>
+	
+	<pre>
+##
+# Long reads files
+# You can input one of three types of long-read data: 
+	# 1. Long-read alignments on reference genome in GPD format. 
+	# If you has run IDP on the same data, you can use LR.gpd in the previous temp folder.
+	# For more info of GPD format, please check http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp
+
+LR_gpd_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/no53primer_LR.gpd
+
+	# or
+	# 2. Long-read alignments on reference genome in PSL format (BLAT output format). 
+	# If the PSL file only contains unique alignment for each long reads, then set psl_type = 1. Otherwise, set psl_type = 0
+
+LR_psl_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/no53primer_LR.fa.psl
+psl_type = 1
+     
+	# or
+	# 3. Long reads in FASTA format (LSC corrected data is preferred) and reference genome in FASTA format. 
+	# IDP will run BLAT to align long reads to reference genome.
+	# (Optional) If primer sequence at 5' end (five_primer) or 3' end (three_primer) is input, IDP can trim the primer sequences off.
+	# Primer sequence must be homopolyer compressed. E.g. the original sequence is AACCCTTGGGG, then you should input ACTG 
+	
+LR_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/test.fa
+genome_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/genome.fa
+five_primer = AGTACTCTG
+three_primer = CGCAGAGTAC
+	</pre>
+    <div id="shortreads">
+    <h3><img src="images/dna.png"> Input files: short reads</h3>
+    </div>
+	<p>Two short read data are REQUIRED: 1. alignment in sam format, and 2. junction detection in bed format.</p>
+	<p> The file locations and their format should be set in run.cfg file. </p>
+	<p>You can generate these two files very easily from <a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> or the other RNA-seq aligners, such as Tophat and MapSplice.  At the moment, IDP only supports junctions in the format produced by SpliceMap</P>
+
+<pre>
+##
+# Short reads files
+# You can input two short-read data: 
+
+SR_jun_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/junction_color.bed
+SR_sam_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/good_hits.sam
+</pre>
+
+<br>
+    <div id="output">
+    <h3><img src="images/dna.png"> Output files</h3>
+    </div>
+    <p>There are four output files: isoform.gpd, isoform.exp, isoform_detection.gpd, isoform_prediction.gpd in output folder:
+    </p>
+    <ul>
+    <li><i>isoform.gpd</i></li>
+    
+    <dd> This file contains all gene isoforms identified from detection or prediction. There are overlap between detection and prediction, so isoform.gpd removes the redundant ones. 
+	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>. 
+	  </dd>
+	  </ul>
+	  
+	 <ul>
+    <li><i>isoform.exp</i></li> 
+      <dd> This file contains the gene/gene isoform abundance. Three columns are seperated by tab: isoform ID, isoform abundance and gene abundance.
+	  The novel isoforms uses their gene loci as the ID, such as chr2:204193002-204296891.1. The last number is the index of the isoform in this gene locus. </dd>
+	  </ul>
+	  
+	  
+	 <ul>
+    <li><i>isoform_detection.gpd</i></li> 
+	<dd> This file contains the detections of gene isoforms annotated in the reference annotation (ref_annotation_pathfilename in run.cfg). 
+	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>. 
+	</dd>
+	  
+	</ul>  
+	
+	 <ul>
+    <li><i>isoform_prediction.gpd</i></li> 
+	<dd>This file contains the gene isoform predictions. The gene name is denoted as the gene locus (such as chr2:204193002-204296891) and the isoform name is the gene locus with an index (such as chr2:204193002-204296891.1).
+	If an predicted isoform shares junctions with an annotated gene, then this predicted isoform is assigned to this gene as a novel isoform.</dd>
+    </ul>
+    <ul>
+    <li><i>fusion_report.tsv</i></li> 
+    <dd>This file contains 24 columns describing each fusion event supported by both long and short reads.  Fusion events are listed by fusion site.  Whenever possible canonical splice signals are used to orient the fusion.</dd>
+      <ul>
+        <li>Alphabetized_Junction_Name - 1-based index coordinate name of junction site</li>
+        <li>Chr_1 - chromosome 1</li>
+        <li>Coord_1 - 1-based coordinate of the last base of the exon prior to the junction</li>
+        <li>Dir_1 - direction of the splice from coord_1 + means 5' to 3' along the reference</li>
+        <li>Ends_of_reference_exon - was the splice at the end of a known reference exon</li>
+        <li>Chr_2</li>
+        <li>Coord_2</li>
+        <li>Dir_2</li>
+        <li>Start_of_reference_exon</li>
+        <li>Fusion_Description - The annotations from the reference gpd if available</li>
+        <li>Transcript_Strands</li>
+        <li>Evidence_for_correct_5-3prime_ordering-Transcript - Y order is infered from a transcript, N order is ambiguous or arbitrary</li>
+        <li>Evidence_for_correct_5-3prime_ordering-SpliceJunctionBases Y order is infered from the splice junction, N order is ambiguous or arbitrary</li>
+        <li>Gene_1</li>
+        <li>Gene_2</li>
+        <li>LR - long reads supporting fusion</li>  
+        <li>nr_Unique - non-redundantly mapping position short reads supporting the fusion site only</li>   
+        <li>Unique - unique short reads supporting the fusions site only</li>  
+        <li>Multi - short reads supporting more than one fusion site, but only fusion sites</li>   
+        <li>Ref-Unique - short reads supporting the fusion site but multiply mapped to the reference in one position</li>  
+        <li>Ref-Multi - short reads supporting the fusion site but multiply mapped to the reference in multiple positions</li>   
+        <li>Max_min_LR_side_length - from all long reads supporting the fusion, if we look at the shortest side of each fusion pair, which is the longest?</li>  
+        <li>Max_min_LR_side_unique_base_count</li>   
+        <li>Max_min_flanking_unique_base_counts</li>
+      </ul>
+	</ul> 
+	
+
+	<p></p>
+
+    
+    <div id="time">
+    <h3><img src="images/dna.png"> Execution Time</h3>
+    </div>
+    <p>
+    The following execution times are guesstimates based on the running times on our servers with 20 threads. These figures will greatly
+    differ based on your data size and your system configuration. 
+    </p>
+    <ul>
+    <li>2,000,000 LSC-corrected PacBio long reads X 120 million 100bp Illumina short reads - 20 hours</li>
+    </ul>
+
+    
+  </div>
+  
+  
+  
+  
+
+<div id="sidebar">
+    <h2>Site Map</h2>
+    <ul>
+      <li><a href="default.asp">Home</a></li>
+      
+      <li><a href="IDP-fusion_download_current.asp">Downloads</a></li>
+      <li><a href="IDP-fusion_contact.asp">Contact</a></li>
+      <li><a href="IDP-fusion_requirements.asp">Requirements</a></li>
+      <li><a href="IDP-fusion_howitworks.asp">How it works?</a></li>
+<li><a href="IDP-fusion_long_read_file_guide.asp">Long read file guide</a></li>
+<li><a href="IDP-fusion_cfg.asp">CFG file format</a></li>
+
+
+  <li><a href="IDP-fusion_faq.asp">FAQ</a></li>
+
+    </ul>
+    <h3>Help</h3>
+    <ul>
+      
+     
+
+      <li><a href="IDP-fusion_manual.asp">Manual</a></li>
+      <li><a href="IDP-fusion_tutorial.asp">Tutorial</a></li>
+      
+    </ul>
+    <h2>Download</h2>
+    <h3>Current release</h3>
+    <ul>
+      <li><a href="IDP-fusion_download_current.asp"><img src="images/download.png"> IDP-fusion 1.1.1 </a> (<a href="IDP-fusion_download_current.asp#notes">notes</a>)</li>
+    </ul>
+
+        <h2>Useful links</h2>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/">Au Lab</a> - Au Lab homepage </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> - Novel splice junction discovery</li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/LSC/">LSC</a> - Error correction of PacBio long reads </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/">IDP</a> - Isoform Detection and Prediction  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-ASE/">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.asp">hESC transcriptome</a> - hESC transcriptome by IDP </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/AlignQC/">AlignQC</a> - Check an alignment, assess error patterns, and make reports </li>
+    </ul>
+   
+
+<ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-denovo/">IDP-denovo</a> - <i>de novo</i> transcriptome assembly and annotation</li>
+    </ul>
+
+
+<ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/GenoClone/">GenoClone</a> - Reveal tumor heterogeneity</li>
+    </ul>
+
+
+ <ul>
+      <li><a href="https://github.com/jason-weirather/Au-public">Au lab scripts</a> - Public repository of Au lab scripts and utilities </li>
+    </ul>
+
+
+    <br><ul><center><img src="images/seal.gif" width="75%" hight="75%"><center></ul>
+  </div>
+
+
+
+
+
+<div id="footer">
+    <ul>
+      <li>&copy; <a href=" http://www.healthcare.uiowa.edu/labs/au/">Kin Fai Au</a>.  All Rights Reserved.</li>
+      <li><a href=" http://www.uiowa.edu/">University of Iowa</a>, IA 52242.</li>
+    </ul>
+</div>
+
+
+<!-- end #content -->
+</body>
+
+
+</html>
