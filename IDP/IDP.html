@@ -92,7 +92,7 @@
 	<div id="SpliceMap-LSC-IDP pipeline">
     <h2>SpliceMap-LSC-IDP pipeline</h2>
     </div>
-    <p>This hESC transcriptome is identified by <a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a>-<a href="http://www.augroup.org/LSC/LSC/">LSC</a>-<a href="http://www.augroup.org/IDP/IDP/">IDP</a> pipeline.</p>
+    <p>This hESC transcriptome is identified by <a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a>-<a href="http://www.augroup.org/LSC/LSC">LSC</a>-<a href="http://www.augroup.org/IDP/IDP">IDP</a> pipeline.</p>
 	<p>SpliceMap takes short reads from the Second Generation Sequencing platforms, such as Illumina, to detect exon junctions.</p>
 	<p>LSC makes use of the high-quality short reads to correct the long reads from PacBio platform. The output is the error-corrected long reads.</p>
 	<p>IDP uses the junction detections and the alignment of error-corrected long reads to detect the relatively short isoforms at full-length and predict the very long isoforms by statistical modeling. </p>
@@ -157,7 +157,7 @@ redundancies will be handled by IDP.</p>
     <li> One input of IDP is the short-read RNA-seq results: junctions (bed file) AND alignments of short reads (sam file). 
 	<br> Most RNA-seq tools, such as <a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> and Tophat can output these two files.</li>
     <li> The other input is the long reads: raw sequences (FASTA file) OR alignment of long reads (PSL file by BLAT or <a href="IDP_gpd_format.html">GPD file</a>)
-	<br> The error-corrected long reads from PacBio data is perferred. <a href="http://www.augroup.org/LSC/LSC/">LSC</a> is our default error-correction tool. </li>
+	<br> The error-corrected long reads from PacBio data is perferred. <a href="http://www.augroup.org/LSC/LSC">LSC</a> is our default error-correction tool. </li>
 	
 	<li> The IDP output are the gene isoform identifications and quantification of genes and gene isoforms. <a href="hESC.html"> hESC transcriptome (H1 cell line)</a> is the first one identified by this methods. 
 	For more details of this transcriptome, please see its homepage <a href="hESC.html"> <b>http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.html</b> </a> and our paper <b> Characterization of the human ESC transcriptome by hybrid sequencing </b>[<a href="http://www.augroup.org/IDP/IDP.pdf">preprint</a>].
@@ -233,7 +233,7 @@ redundancies will be handled by IDP.</p>
       <li><a href="http://www.augroup.org/IDP/IDP">IDP</a> - Isoform Detection and Prediction  </li>
     </ul>
     <ul>
-      <li><a href="http://www.augroup.org/IDP-ASE/idp-ase">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
+      <li><a href="http://www.augroup.org/IDP-ASE/IDP-ASE">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
     </ul>
     <ul>
       <li><a href="http://www.augroup.org/IDP-fusion/IDP-fusion">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
