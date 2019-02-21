@@ -1,0 +1,391 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>IDP-fusion cfg file</title>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="styles/flex_textfont_sans.css" media="all" />
+<!-- SANDSTONE AND TILE TEMPLATE (FLEXIBLE-WIDTH, SANS-SERIF TEXT FONT VERSION) PROVIDED BY STANFORD UNIVERSITY INFORMATION TECHNOLOGY SERVICES FOR NON-DEPARTMENTAL OR UNOFFICIAL USE BY STANFORD FACULTY, STAFF AND STUDENTS. DESIGNED IN 2009 BY DAVE REAM, IT SERVICES. FOR POLICIES AND GUIDELINES ON ACCESSIBILITY, COPYRIGHT, AND ON THE USE OF STANFORD'S NAME AND TRADEMARKS, INCLUDING THE UNIVERSITY SEAL, SEE http://soap.stanford.edu, http://www.stanford.edu/group/identity, and http://adminguide.stanford.edu --> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50750315-1', 'uiowa.edu');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!--BEGIN TOP RED BAR -->
+<div id="top_navbar">
+  <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
+   <ul>
+    <li>IDP-fusion IS DEVELOPED BY <a href="http://www.healthcare.uiowa.edu/labs/au/">KIN FAI AU</a> with help from collaborators</li>
+  </ul>
+  <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
+</div>
+<!-- END TOP RED BAR -->
+
+
+<div id="content_container">
+  <!-- PAGE TITLE AREA AND BOX -->
+    <div id="page_title_area">
+    <!-- STANDARD PAGE TITLE; NO DECORATIVE GRAPHIC -->
+    <!-- <div id="page_title_leftcontent"> -->
+    <div id="page_title_leftcontent">
+      <h1>IDP-fusion</h1>
+      <ul>
+        <li>IDP-fusion is a tool for <b>Isoform Detection and Prediction for Fusion Genes</b> <br> from Second Generation Sequencing and PacBio sequencing. 
+        It offers very <br> reliable gene isoform identification 
+		with high sensitivity <br>
+
+      </ul>
+    </div>
+    
+    <div id="page_title_rightcontent">
+	<ul>
+
+
+	    <li>&nbsp;</li>
+
+		<li><img src="images/IDP-fusion.png" width="300" >&nbsp;&nbsp;&nbsp;&nbsp;</li>
+		
+	</ul>
+    </div>
+
+<p class="page_title_area_lower">Latest News:  IDP-fusion_20161024 is released <a href="default.asp#news">read more</a></p>
+    
+    
+  </div>
+  <!-- END PAGE TITLE AREA AND BOX -->
+  <div id="content">
+    <h2>.cfg file format</h2>
+    In order to run IDP-fusion. Now, simply edit the run.cfg file and type
+    </p>
+    <blockquote>
+    runIDP.py run.cfg 0
+    </blockquote>
+    <p>
+    and that's it! </p>
+	<dd>The last argument in this example is "0", which asks IDP-fusion to run end to end.</dd>
+	<dd>If this argument changes to 1, IDP-fusion will only finish isoform candidate construction.</dd>
+	<dd>If this argument changes to 2, IDP-fusion will finish the remaining steps (following isoform candidate construction).</dd>
+	<p>An example run.cfg file is included with every IDP-fusion download and decriptions
+    of each field can be found in the comments within the file. Detailed descriptions of each field
+    is also below. 
+    </p>
+    
+    <h3><img src="images/dna.png"> .cfg syntax</h3>
+    There are only three types of syntax in a .cfg file. 
+    <dl>
+      <dt>Comment</dt>
+      <dd>Any line begining with <b>#</b> is a comment. # must be the first character on the line.  </dd>
+      <dt>Single Value</dt>
+      <dd>A single value written in the following format
+      <blockquote>
+        <i>tag</i> = <i>value</i>
+      </blockquote>
+      For example,
+      <blockquote>
+		LR_gpd_pathfilename = /home/kinfai/3seq/IDP_0.1/test_data/no53primer_LR.gpd
+      </blockquote>
+      </dd>
+    </dl>
+    
+    <h3><img src="images/dna.png"> Example .cfg file</h3>
+    <p>
+    The following is an example .cfg file. It is included in every IDP download
+    which you can download here <a href="IDP_download_current.asp"><img src="images/download.png"> and run.cfg will be in the expanded folder</a>. The values
+    which are optional are noted in the comments and you may comment them out. 
+    </p>
+
+    <pre>##
+###################################################
+#
+# This cofiguration file contains all settings for a run
+# of IDP (Isoform Detection and Prediction).
+#
+# lines begining with '#' are comments
+# lists begin with '> tag' and end with '<' on separate lines
+#
+###################################################
+##
+
+Nthread = 16
+# During some parts of IDP-fusion jobs will be split 
+# and multiple threads run simultaneously.  This is 
+# where you can set that number of threads.
+
+Njun_limit = 10
+# This is the maximum number of junctions to be considered 
+# when detected splices are used to extend the possible 
+# isoforms present. Isoform candidates extended by more 
+# junctions than this limit will be excluded.
+
+Niso_limit = 20
+# The maximum number of Isoform candidates to be considered
+# for isoform prediction/quantification.  Loci with more
+# candidate isoforms than this limit will be excluded.
+
+L_exon_limit = 1700
+# The longest allowed exon length.
+
+L_min_intron = 68
+# The minimum intron size.
+
+Bfile_Npt = 500
+Bfile_Nbin = 5
+# Binning options in Bfile construction
+
+exon_construction_junction_span = 1
+
+python_path = /usr/bin/python
+# This is the path to your python
+
+temp_foldername = temp_fa
+# This is where the work in progress is stored, and this
+# folder will require a considerable amount of disk space.
+
+output_foldername = output_fa
+# This folder will contain outputs from IDP-fusion.
+
+aligner_choice = gmap
+# The aligner of choice, either 'gmap' or 'blat'
+
+blat_executable_pathfilename = blat
+# The path to your blat executable
+
+gmap_executable_pathfilename = gmap
+# The path to your gmap executable
+
+gmap_index_pathfoldername = ./Data/gmap_index.chr17chr20/
+# The path to your gmap index folder
+
+seqmap_executable_pathfilename = seqmap
+# The path to the seqmap executable.  This is an aligner
+# that is part of splicemap, and it is needed when
+# primers are specified.
+
+LR_gpd_pathfilename = 
+# The genepred alignment of the long reads.  This is not
+# used in IDP-fusion when fusion detection is enabled,
+# so it will generally be left blank.  The PSL file which
+# is created before the gpd file is more useful for
+# determining possible fusions.  This file could be
+# helpful if you were running without fusion detection
+# and you wanted to skip PSL file processing.
+
+LR_pathfilename = ./Data/long_reads.chr17q23-25chr20q13.fasta
+# These are the long reads in fasta format.
+
+genome_pathfilename = ./Data/genome.chr17chr20.fasta
+#  The path to the genome fasta
+
+five_primer = 
+# The 5 prime primer that has been HOMOPOLYMER COMPRESSED. 
+# This means that if the primer sequences was AAATTTGGGGCCT
+# you need to write it as ATGCT.
+
+three_primer = 
+# The 3 prime primer that has been HOMOPOLYMER COMPRESSED. 
+# This means that if the primer sequences was AAATTTGGGGCCT
+# you need to write it as ATGCT.
+
+LR_psl_pathfilename = ./Data/MCF7_ready_for_fusion_20140928.chr17q23-25chr20q13.sorted.psl
+
+psl_type = 0
+# Type zero is preferred for gmap outputs made in 'blat psl' format.
+
+ref_annotation_pathfilename = ./Data/refFlat_20140611.chr17chr20.gpd.txt
+# These annotations will be used to detect known transcripts and to name outputs.
+
+allref_annotation_pathfilename = ./Data/hg19.chr17chr20.gene_est.refFlat.txt
+# These annotations include the largest number of observed pairs of fusion
+# splices possible from public databases.  Pairs of splices not found in these
+# databases can be considered true negatives for the purposes of determining
+# false positive rate cutoffs.  This is used for calibrating the expression 
+# threshold and will keep signficantly expressed novel results.
+
+uniqueness_bedGraph_pathfilename = ./Data/wgEncodeDukeMapabilityUniqueness35bp.chr17chr20.bedGraph
+# This file is used to annotated the 'uniquness' of the region
+# surrounding the fusion event
+
+
+SR_jun_pathfilename = ./Data/splicemap_output/junction_color.bed
+# Junctions identified in short reads by splicemap
+
+SR_sam_pathfilename = ./Data/splicemap_output/good_hits.chr17q23-25chr20q13.tenth.sam
+# Short read alignments made by splicemap
+
+read_length = 89
+# Short read length
+
+min_junction_overlap_len = 10
+# minimum overhang requirement for short reads
+
+CAGE_data_filename =
+# (optional) gene starts
+
+detected_exp_len = 
+# (optional) This will be computed at runtime if not provided,
+# it gives the expression vs length.
+
+I_refjun_isoformconstruction =  1
+I_ref5end_isoformconstruction = 1
+I_ref3end_isoformconstruction = 1
+
+estimator_choice = MAP
+# Can use either MAP or MLE
+
+FPR = 0.1
+# Threshold of false positive rate to report
+
+fusion_mode = 1
+# Fusion mode of 1 is to do fusion detection and fusion isoform quantification
+
+SR_pathfilename = ./Data/short_reads.chr17q23-25chr20q13.tenth.fasta
+# The path to the short reads 
+
+SR_aligner_choice = STAR
+# The choice of short read aligner for fusion site detection
+
+mapsplice_path = 
+# Mapsplcie is not currently implemented.
+
+star_path =
+# Path to STAR.  If left blank, it will assume star has been installed
+# in your path
+
+genome_bowtie2_index_pathfilename = ./Data/bowtie2/bowtie2_index.chr17chr20
+# The bowtie2 index for your genome
+
+transcriptome_bowtie2_index_pathfilename = ./Data/bowtie2/txn/chr17chr20
+# The bowtie2 index for your transcriptome, based on your reference
+# annotation genepred.  If you don't supply one, IDP-fusion will
+# compute this on the fly.
+
+min_LR_overlap_len = 100
+# Minimum long read coverage that must be satisified to consider a 
+# long read alignment as part of a fusion
+
+LR_fusion_point_err_margin = 100
+# The maximum gap or overlap of to partial alignments when considering 
+# a fusion
+
+min_LR_fusion_point_search_distance = 20
+# Search at least this distance from a predicted fusion splice point
+# for the true fusion splice point.
+
+uniq_LR_alignment_margin_perc = 20
+
+Niso_fusion_limit = 1000
+# The maximum number of isoform candidates to consider for quantification
+# of fusion isoforms.  Since fusion isoforms are of paramount interest in
+# IDP-fusion, we give the option of setting this limit to be very large
+# compared to the perhaps less interesting canonical isoforms.
+#########################
+
+
+
+    </pre>
+   
+  </div>
+  
+<div id="sidebar">
+    <h2>Site Map</h2>
+    <ul>
+      <li><a href="default.asp">Home</a></li>
+      
+      <li><a href="IDP-fusion_download_current.asp">Downloads</a></li>
+      <li><a href="IDP-fusion_contact.asp">Contact</a></li>
+      <li><a href="IDP-fusion_requirements.asp">Requirements</a></li>
+      <li><a href="IDP-fusion_howitworks.asp">How it works?</a></li>
+<li><a href="IDP-fusion_long_read_file_guide.asp">Long read file guide</a></li>
+<li><a href="IDP-fusion_cfg.asp">CFG file format</a></li>
+
+
+  <li><a href="IDP-fusion_faq.asp">FAQ</a></li>
+
+    </ul>
+    <h3>Help</h3>
+    <ul>
+      
+     
+
+      <li><a href="IDP-fusion_manual.asp">Manual</a></li>
+      <li><a href="IDP-fusion_tutorial.asp">Tutorial</a></li>
+      
+    </ul>
+    <h2>Download</h2>
+    <h3>Current release</h3>
+    <ul>
+      <li><a href="IDP-fusion_download_current.asp"><img src="images/download.png"> IDP-fusion 1.1.1 </a> (<a href="IDP-fusion_download_current.asp#notes">notes</a>)</li>
+    </ul>
+
+        <h2>Useful links</h2>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/">Au Lab</a> - Au Lab homepage </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> - Novel splice junction discovery</li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/LSC/">LSC</a> - Error correction of PacBio long reads </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/">IDP</a> - Isoform Detection and Prediction  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-ASE/">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.asp">hESC transcriptome</a> - hESC transcriptome by IDP </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/AlignQC/">AlignQC</a> - Check an alignment, assess error patterns, and make reports </li>
+    </ul>
+   
+
+<ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-denovo/">IDP-denovo</a> - <i>de novo</i> transcriptome assembly and annotation</li>
+    </ul>
+
+
+<ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/GenoClone/">GenoClone</a> - Reveal tumor heterogeneity</li>
+    </ul>
+
+
+ <ul>
+      <li><a href="https://github.com/jason-weirather/Au-public">Au lab scripts</a> - Public repository of Au lab scripts and utilities </li>
+    </ul>
+
+
+    <br><ul><center><img src="images/seal.gif" width="75%" hight="75%"><center></ul>
+  </div>
+
+
+
+
+
+<div id="footer">
+    <ul>
+      <li>&copy; <a href=" http://www.healthcare.uiowa.edu/labs/au/">Kin Fai Au</a>.  All Rights Reserved.</li>
+      <li><a href=" http://www.uiowa.edu/">University of Iowa</a>, IA 52242.</li>
+    </ul>
+</div>
+
+    
+<!-- end #content -->
+</body>
+
+
+</html>
