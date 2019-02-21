@@ -1,0 +1,312 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <!-- include virtual="header.inc" -->
+
+ <head>
+  <title>IDP tutorial</title>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="styles/flex_textfont_sans.css" media="all" />
+<!-- SANDSTONE AND TILE TEMPLATE (FLEXIBLE-WIDTH, SANS-SERIF TEXT FONT VERSION) PROVIDED BY STANFORD UNIVERSITY INFORMATION TECHNOLOGY SERVICES FOR NON-DEPARTMENTAL OR UNOFFICIAL USE BY STANFORD FACULTY, STAFF AND STUDENTS. DESIGNED IN 2009 BY DAVE REAM, IT SERVICES. FOR POLICIES AND GUIDELINES ON ACCESSIBILITY, COPYRIGHT, AND ON THE USE OF STANFORD'S NAME AND TRADEMARKS, INCLUDING THE UNIVERSITY SEAL, SEE http://soap.stanford.edu, http://www.stanford.edu/group/identity, and http://adminguide.stanford.edu --> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50750315-1', 'uiowa.edu');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+<body>
+<!--BEGIN TOP RED BAR -->
+<div id="top_navbar">
+  <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
+   <ul>
+    <li>IDP-fusion IS DEVELOPED BY <a href="http://www.healthcare.uiowa.edu/labs/au/">KIN FAI AU</a> with help from collaborators</li>
+  </ul>
+  <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
+</div>
+<!-- END TOP RED BAR -->
+
+
+
+<div id="content_container">
+  <!-- PAGE TITLE AREA AND BOX -->
+    <div id="page_title_area">
+    <!-- STANDARD PAGE TITLE; NO DECORATIVE GRAPHIC -->
+    <!-- <div id="page_title_leftcontent"> -->
+    <div id="page_title_leftcontent">
+      <h1>IDP-fusion</h1>
+      <ul>
+        <li>IDP-fusion is a tool for <b>Isoform Detection and Prediction for Fusion Genes</b> <br> from Second Generation Sequencing and PacBio sequencing. 
+        It offers very <br> reliable gene isoform identification 
+		with high sensitivity <br>
+
+      </ul>
+    </div>
+    
+    <div id="page_title_rightcontent">
+	<ul>
+
+
+	    <li>&nbsp;</li>
+
+		<li><img src="images/IDP-fusion.png" width="300" >&nbsp;&nbsp;&nbsp;&nbsp;</li>
+		
+	</ul>
+    </div>
+
+<p class="page_title_area_lower">Latest News:  IDP-fusion_20161024 is released <a href="default.asp#news">read more</a></p>
+    
+    
+  </div>
+  <!-- END PAGE TITLE AREA AND BOX -->
+  <div id="content">
+    <h2>Tutorial</h2>
+    <p>This tutorial is being currently being updated, and will help guilde you through an example of running IDP-fusion.</p>
+    <p>This tutorial will help you get started with IDP-fusion by demonstrating how to identify gene isoforms and fusion isoforms using PacBio long reads and short mappable short reads.If you experience any problems following these steps, please don't hesitate to <a href="IDP_contact.asp">contact</a> us. </p>
+    
+    <h3><img src="images/dna.png">  <b>Step 1</b> - Download and extract the example files</h3>
+    <p>You need to download:</p>
+    <ul>
+   <a href="IDP-fusion_download_current.asp"><img src="images/download.png"><b>The latest release of IDP-fusion</b></a><br>
+   <p>Uncompress and extract the directory in a location of your choice to get a directory containing IDP executable files.</p>
+    <blockquote>
+    <pre>
+      $ tar -xzvf IDP-fusion_20150212.tar.gz
+    </pre>
+    </blockquote>   
+    Download the <a href="files/MCF7_chr17q23-25chr20q13_Example.zip" onClick="ga('send', 'event', 'file download', 'click', 'IDP-fusion example download');"><img src="images/download.png"><b>example data</b></a>.<br>
+    <h3><b>For the example data:</b></h3>
+   <p>Uncompress and extract the directory in a location of your choice to get an example working directory containing a data subfolder and configuration files.</p>
+    <blockquote>
+    <pre>
+      $ unzip MCF7_chr17q23-25chr20q13_Example.zip
+</pre>
+    </blockquote>
+    <p>After extracting the folder, it should contain the following files and folders:
+    </p>
+    <blockquote>
+    <pre>
+      $ ls MCF7_chr17q23-25chr20q13_Example/
+      Data/ output_example/ run_fasta.cfg run_psl.cfg temp_example/
+      $ cd MCF7_chr17q23-25chr20q13_Example/
+      $ ls Data/
+      bowtie2/
+      ensGene_20140313.chr17chr20.gpd
+      genome.chr17chr20.fasta
+      gmap_index.chr17chr20/
+      hg19.chr17chr20.gene_est.refFlat.txt
+      long_reads.chr17q23-25chr20q13.fasta
+      MCF7_ready_for_fusion_20140928.chr17q23-25chr20q13.sorted.psl
+      multiexon_refFlat.txt_positive_exp_len
+      refFlat_20140611.chr17chr20.gpd.txt
+      short_reads.chr17q23-25chr20q13.tenth.fasta
+      splicemap_output/
+      wgEncodeDukeMapabilityUniqueness35bp.chr17chr20.bedGraph
+    </pre>
+    </blockquote>
+
+    <h3><img src="images/dna.png">  <b>Step 2</b> - Examine the example directory contents</h3>
+    Before we continue, it will be helpful to learn the purpose of each file in this example. When you 
+    run IDP on your data, all of these files can be in separate locations if you wish. 
+     <dl>
+      <dt>run_fasta.cfg run_psl.cfg</dt>
+      <dd>These are the configuration files for two types of <a href="IDP-fusion_manual.asp#longreads">long read input data</a>. Thus, you can use both of them to run the example data. The configuration file is a text file that contains the path to your data and the configuration settings. Please see <a href="IDP-fusion_cfg.asp">.cfg file format</a> for 
+      details. It is simple to edit.  </dd>
+      <dt>Data/ directory</dt>
+      <dd>This directory contains all of the long read data and short read data in the example, and the directory may located anywhere and may be read-only. These examples contain the following files:</dd>
+    <table>
+      <tr><td><b>File/Folder</b></td><td><b>Description</b></td></tr>
+      <tr><td>bowtie2/</td><td>Folder contains the bowtie2 index built from the example's reference genome.</td></tr>
+      <tr><td>ensGene_20140313.chr17chr20.gpd</td><td><a href="IDP_gpd_format.asp">genepred (GPD)</a> format file for ensembl transcripts, used for the secondary annotation of fusion sites</td></tr>
+
+      <tr><td>gmap_index.chr17chr20/</td><td>Folder contains the GMAP index files built from the example's reference genome.</td></tr>
+      <tr><td>hg19.chr17chr20.gene_est.refFlat.txt</td><td><a href="IDP_gpd_format.asp">genepred (GPD)</a> format file for the whole genome splicing data from multiple sources including ESTs and reference genome databases.</td></tr>
+      <tr><td>long_reads.chr17q23-25chr20q13.fasta</td><td>The corrected long reads in fasta format</td></tr>
+      <tr><td>MCF7_read_for_fusion_20140928.chr17q23-25chr20q13.sorted.psl</td><td>Long read .psl alignemnts that have been generated by GMAP. This is needed for running run_psl.cfg but not run_fasta.cfg since it can be created in the run_fasta.cfg pipeline using GMAP.</td></tr>
+      <tr><td>multiexon_refFlat.txt_positive_exp_len</td><td>File with the distribution of lengths and expressions.</td></tr>
+      <tr><td>refFlat_20140611.chr17chr20.gpd.txt</td><td><a href="IDP_gpd_format.asp">genepred (GPD)</a> format reference genepred file used to annotated transcript.</td></tr>
+      <tr><td>multiexon_refFlat.txt_positive_exp_len</td><td>Length and detection bias by PacBio from observed PacBio reads.  Generation requires many long reads, and can be generated emperically by not defining detected_exp_len in the .cfg file.</td></tr>
+      <tr><td>short_reads.chr17q23-25chr20q13.tenth.fasta</td><td>Short read fasta file.</td></tr>
+      <tr><td>splicemap_output/</td><td>Folder containing the output of running splicemap on the short reads.</td></tr>      
+      <tr><td>splicemap_output/good_hits.chr17q23-25chr20q13.tenth.sam</td><td>Splicemap alignment of short reads.</td></tr>
+      <tr><td>splicemap_output/junction_color.bed</td><td>Splicemap junctions of found from short reads.</td></tr>
+      <tr><td>wgEncodeDukeMapabilityUniqueness35bp.chr17chr20.bedGraph</td><td>File with the uniqueness scores in bedgraph format. Used to annotate the uniqueness of regions flanking fusions sites.</td></tr>
+    </table>
+
+
+   
+      <dt>bin directory</dt>
+      <dd>This is directory stores all of the IDP binaries. It is important that 
+      all the binaries are in the same location. No installation is required! Simply copy this
+      directory to a location convenient for you. 	  
+      </dd>
+      <br>
+      <h3>During execution, as defined in the .cfg file, the following directoires will be created</h3>
+      <dt>temp directory</dt>
+      <dd>A temporary directory temp_psl/ or temp_fasta/ will be created depending on the example mode you run. 
+      <dt>output directory</dt>
+      <dd>An output directory output_psl/ or output_fasta/ will be created depending on the example configuration you run.</dd>
+
+    </dl>
+    <h3><img src="images/dna.png"> <b>Step 3</b> - Set your the STAR directory in the configuration file</h3>
+    <p>The directory (not the executable file) in which the STAR executable resides needs to be set in the configuration file such as run_psl.cfg. For example, we would set <i>star_path = /Shared/Au/jason/Source/STAR_2.3.0e.Linux_x86_64</i> 
+    </p>
+    
+    <h3><img src="images/dna.png"> <b>Step 4</b> - Run IDP on the example data</h3>
+    <p>Only one command is need to to initiate IDP. 
+    </p>
+    <p>Make sure your terminal is pointed to the small_example/ folder.  These examples of commands assumes your IDP executables download was extracted into your home directory, but any location will be fine. Type one of the following commands:</p>
+    <blockquote>
+    $ ~/IDP_0.1.8/runIDP.py run_LRfa.cfg 0
+    </blockquote>
+	or
+	<blockquote>
+    $ ~/IDP_0.1.8/runIDP.py run_LRpsl.cfg 0
+    </blockquote>
+	or
+	<blockquote>
+    $ ~/IDP_0.1.8/runIDP.py run_LRgpd.cfg 0
+    </blockquote>
+    <p>These three runs are for three different types of long reads. The second argument is set to 0, because the example data runs end-to-end. 
+	You can change the <a href="IDP_manual.asp#runIDP">mode</a> (the second argument) according to your need.</p>
+    <blockquote>
+ 
+    </blockquote>
+    <p>At this point, feel free to take a break. After a few minutes, IDP will be completed.</p>
+    
+    <h3><img src="images/dna.png">  <b>Step 5</b> - Examining the output</h3>
+    All of the output from IDP is automatically copied to the "output" directory. After
+    this execution, it should contain:
+
+    Each output file is descired on <a href="IDP_manual.asp#output">maual page</a> in more details:
+    <dl>
+      <dt>&nbspisoform.gpd</dt>
+      <dd>This file contains all gene isoforms identified from detection or prediction. There are overlap between detection and prediction, so isoform.gpd removes the redundant ones. 
+	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>.</dd>
+      <dt>&nbspisoform.exp</dt>
+      <dd>This file contains the gene/gene isoform abundance. Three columns are seperated by tab: isoform ID, isoform abundance and gene abundance.
+	  The novel isoforms uses their gene loci as the ID, such as chr2:204193002-204296891.1. The last number is the index of the isoform in this gene locus. </dd>
+      <dt>&nbspisoform_detection.gpd</dt>
+      <dd>This file contains the detections of gene isoforms annotated in the reference annotation (ref_annotation_pathfilename in run.cfg). 
+	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>.</dd>
+	  <dt>&nbspisoform_detection.gpd</dt>
+	  <dd>This file contains the gene isoform predictions. The gene name is denoted as the gene locus (such as chr2:204193002-204296891) and the isoform name is the gene locus with an index (such as chr2:204193002-204296891.1).
+	If an predicted isoform shares junctions with an annotated gene, then this predicted isoform is assigned to this gene as a novel isoform.</dd>
+
+    </dl>
+    <h3><img src="images/dna.png"> <b>Step 6</b> - Generate a fusion report.</h3>
+    <p>To get a table of outputs like those show in the publicaion, you can process files in the temporary directory generate a fusion report with a postprocessing script. For example, we can run 
+      <blockquote>
+    $ ../IDP-fusion_20150212/bin/make_fusion_report.py Data/refFlat_20140611.chr17chr20.gpd.txt Data/genome.chr17chr20.fasta tmp_psl/junctions.txt > report.txt
+    </blockquote>
+    </p>
+	
+    <h3><img src="images/dna.png"> <b>Step 7</b> - Learning how to apply this tutorial to your own data</h3>
+   See the <a href="IDP_manual.asp#using">Using IDP</a> section of the manual. 
+    
+  </div>
+  
+
+ 
+<div id="sidebar">
+    <h2>Site Map</h2>
+    <ul>
+      <li><a href="default.asp">Home</a></li>
+      
+      <li><a href="IDP-fusion_download_current.asp">Downloads</a></li>
+      <li><a href="IDP-fusion_contact.asp">Contact</a></li>
+      <li><a href="IDP-fusion_requirements.asp">Requirements</a></li>
+      <li><a href="IDP-fusion_howitworks.asp">How it works?</a></li>
+<li><a href="IDP-fusion_long_read_file_guide.asp">Long read file guide</a></li>
+<li><a href="IDP-fusion_cfg.asp">CFG file format</a></li>
+
+
+  <li><a href="IDP-fusion_faq.asp">FAQ</a></li>
+
+    </ul>
+    <h3>Help</h3>
+    <ul>
+      
+     
+
+      <li><a href="IDP-fusion_manual.asp">Manual</a></li>
+      <li><a href="IDP-fusion_tutorial.asp">Tutorial</a></li>
+      
+    </ul>
+    <h2>Download</h2>
+    <h3>Current release</h3>
+    <ul>
+      <li><a href="IDP-fusion_download_current.asp"><img src="images/download.png"> IDP-fusion 1.1.1 </a> (<a href="IDP-fusion_download_current.asp#notes">notes</a>)</li>
+    </ul>
+
+        <h2>Useful links</h2>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/">Au Lab</a> - Au Lab homepage </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> - Novel splice junction discovery</li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/LSC/">LSC</a> - Error correction of PacBio long reads </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/">IDP</a> - Isoform Detection and Prediction  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-ASE/">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.asp">hESC transcriptome</a> - hESC transcriptome by IDP </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/AlignQC/">AlignQC</a> - Check an alignment, assess error patterns, and make reports </li>
+    </ul>
+   
+
+<ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-denovo/">IDP-denovo</a> - <i>de novo</i> transcriptome assembly and annotation</li>
+    </ul>
+
+
+<ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/GenoClone/">GenoClone</a> - Reveal tumor heterogeneity</li>
+    </ul>
+
+
+ <ul>
+      <li><a href="https://github.com/jason-weirather/Au-public">Au lab scripts</a> - Public repository of Au lab scripts and utilities </li>
+    </ul>
+
+
+    <br><ul><center><img src="images/seal.gif" width="75%" hight="75%"><center></ul>
+  </div>
+
+
+
+
+
+<div id="footer">
+    <ul>
+      <li>&copy; <a href=" http://www.healthcare.uiowa.edu/labs/au/">Kin Fai Au</a>.  All Rights Reserved.</li>
+      <li><a href=" http://www.uiowa.edu/">University of Iowa</a>, IA 52242.</li>
+    </ul>
+</div>
+
+
+<!-- end #content -->
+</body>
+
+  <!-- include virtual="analytics.inc" -->
+
+</html>
