@@ -1,0 +1,220 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>IDP requirements</title>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="styles/flex_textfont_sans.css" media="all" />
+<!-- SANDSTONE AND TILE TEMPLATE (FLEXIBLE-WIDTH, SANS-SERIF TEXT FONT VERSION) PROVIDED BY STANFORD UNIVERSITY INFORMATION TECHNOLOGY SERVICES FOR NON-DEPARTMENTAL OR UNOFFICIAL USE BY STANFORD FACULTY, STAFF AND STUDENTS. DESIGNED IN 2009 BY DAVE REAM, IT SERVICES. FOR POLICIES AND GUIDELINES ON ACCESSIBILITY, COPYRIGHT, AND ON THE USE OF STANFORD'S NAME AND TRADEMARKS, INCLUDING THE UNIVERSITY SEAL, SEE http://soap.stanford.edu, http://www.stanford.edu/group/identity, and http://adminguide.stanford.edu --> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50750315-1', 'uiowa.edu');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+<!--BEGIN TOP RED BAR -->
+<div id="top_navbar">
+  <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
+   <ul>
+    <li>IDP-fusion IS DEVELOPED BY <a href="http://www.healthcare.uiowa.edu/labs/au/">KIN FAI AU</a> with help from collaborators</li>
+  </ul>
+  <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
+</div>
+<!-- END TOP RED BAR -->
+
+
+ <div id="content_container">
+  <!-- PAGE TITLE AREA AND BOX -->
+    <div id="page_title_area">
+    <!-- STANDARD PAGE TITLE; NO DECORATIVE GRAPHIC -->
+    <!-- <div id="page_title_leftcontent"> -->
+    <div id="page_title_leftcontent">
+      <h1>IDP-fusion</h1>
+      <ul>
+        <li>IDP-fusion is a tool for <b>Isoform Detection and Prediction for Fusion Genes</b> <br> from Second Generation Sequencing and PacBio sequencing. 
+        It offers very <br> reliable gene isoform identification 
+		with high sensitivity <br>
+
+      </ul>
+    </div>
+    
+    <div id="page_title_rightcontent">
+	<ul>
+
+
+	    <li>&nbsp;</li>
+
+		<li><img src="images/IDP-fusion.png" width="300" >&nbsp;&nbsp;&nbsp;&nbsp;</li>
+		
+	</ul>
+    </div>
+
+<p class="page_title_area_lower">Latest News:  IDP-fusion_20161024 is released <a href="default.asp#news">read more</a></p>
+    
+    
+  </div>
+  <!-- END PAGE TITLE AREA AND BOX -->
+  <div id="content">
+    <h2>Requirements</h2>
+    IDP aims to fully integrate into a variety of analysis pipelines. If any of the
+    following requirements conflict with your lab's set up, please <a href="IDP_contact.asp">contact</a> us. 
+    
+    <h3><img src="images/dna.png"> System Requirements</h3>
+    <ul>
+      <li>Linux operating system</li>
+      <li>You needs free hard drive space for double size of your short read alignments data (SAM file,"SR_sam_pathfilename" in run.cfg) </li>
+    </ul>
+    
+    <h3><img src="images/dna.png"> Software Requirements</h3>
+    <ul>
+      <li>Python 2.6</li>
+      <li>scipy and numpy (can do <b>apt-get install python-scipy</b> on Ubnutu to get both)</li>
+      <li>seqmap (included with <a href="http://web.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a>)</li>
+      <li><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a></li>
+      <li><a href="https://github.com/alexdobin/STAR/releases">STAR</a></li>
+      <li><a href="http://research-pub.gene.com/gmap/">GMAP</a> and/or <a href="http://hgdownload.cse.ucsc.edu/admin/exe/">BLAT</a></li>
+
+    </ul>
+    
+    <h3><img src="images/dna.png">Long Reads</h3>
+    <ul>
+      <li><b>LR_pathfilename - </b>Raw sequences (FASTA format)</li>
+      <li>(optionaly) <b>LR_psl_pathfilename - </b>Alignments (PSL format) of long reads</li>
+    </ul>
+    <h3><img src="images/dna.png">Short Reads</h3>
+    <ul>
+      <li><b>SR_pathfilename - </b>Raw sequences (FASTA format)</li>
+      <li><b>SR_jun_pathfilename - </b>Junction detections (SpliceMap BED format).</li>
+      <li><b>SR_sam_pathfilename - </b>Alignments (SAM format) of short reads</li>
+    </ul>
+    <h3><img src="images/dna.png">Reference files</h3>
+    <ul>
+      <li><b>genome_pathfilename - </b>genome FASTA file</li>
+      <li><b>ref_annotation_pathfilename - </b>refFlat genePred file.  See our <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">detailed description of the genePred file format</a>.  This is the main primary set of refernece transcripts used define known transcripts, and to annotate </li>
+      <li>(optional) Ensembl transcripts genePred file.  This will be used for adding additional annotations to a fusion report when your primary reference set does not have an annotation.</li>
+      <li><b>allref_annotation_pathfilename - </b>genePred file with comprehensive known transcritps (EST, genecode, knowngene, refFlat, Ensembl etc..).  This file is used to hunt for a set of true negative isoforms.</li>
+      <li><b>uniqueness_bedGraph_pathfilename - </b>Duke Uniqueness track from UCSC genome browser in bedGraph format.  This file is used to add uniqueness annotations to fusion reports</li>
+    </ul>
+    <h3><img src="images/dna.png">Aligner index files</h3>
+    <ul>
+      <li><b>genome_bowtie2_index_pathfilename - </b>bowtie2 genome index</li>
+      <li>(optional) <b>transcriptome_bowtie2_index_pathfilename - </b> bowtie2 transcriptome index (based on the refFlat primary set of reference transcripts).  Precomuting it can save time, otherwise it will be generated on the fly, based on the reference transcriptome and the genome.</li>
+      <li><b>gmap_index_pathfoldername - </b>GMAP genome index (if using GMAP).  gmap_build can be sued to create this.</li>
+    </ul>
+
+    <h3><img src="images/dna.png"> Upstream</h3>
+    <ul>
+	  <li>The LSC-corrected long reads are preferred. See our <a href="IDP-fusion_long_read_file_guide.asp">guide creating a set of long reads</a> for more information.</li>
+      <li><a href="http://web.stanford.edu/group/wonglab/SpliceMap/">Splicemap</a> must be used to generate the short read alignment (.sam) file, and the junction file (junction_color.bed).</li>
+    </ul>
+
+    
+  </div>
+  
+  
+
+  
+<div id="sidebar">
+    <h2>Site Map</h2>
+    <ul>
+      <li><a href="default.asp">Home</a></li>
+      
+      <li><a href="IDP-fusion_download_current.asp">Downloads</a></li>
+      <li><a href="IDP-fusion_contact.asp">Contact</a></li>
+      <li><a href="IDP-fusion_requirements.asp">Requirements</a></li>
+      <li><a href="IDP-fusion_howitworks.asp">How it works?</a></li>
+<li><a href="IDP-fusion_long_read_file_guide.asp">Long read file guide</a></li>
+<li><a href="IDP-fusion_cfg.asp">CFG file format</a></li>
+
+
+  <li><a href="IDP-fusion_faq.asp">FAQ</a></li>
+
+    </ul>
+    <h3>Help</h3>
+    <ul>
+      
+     
+
+      <li><a href="IDP-fusion_manual.asp">Manual</a></li>
+      <li><a href="IDP-fusion_tutorial.asp">Tutorial</a></li>
+      
+    </ul>
+    <h2>Download</h2>
+    <h3>Current release</h3>
+    <ul>
+      <li><a href="IDP-fusion_download_current.asp"><img src="images/download.png"> IDP-fusion 1.1.1 </a> (<a href="IDP-fusion_download_current.asp#notes">notes</a>)</li>
+    </ul>
+
+        <h2>Useful links</h2>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/">Au Lab</a> - Au Lab homepage </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> - Novel splice junction discovery</li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/LSC/">LSC</a> - Error correction of PacBio long reads </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/">IDP</a> - Isoform Detection and Prediction  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-ASE/">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.asp">hESC transcriptome</a> - hESC transcriptome by IDP </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/AlignQC/">AlignQC</a> - Check an alignment, assess error patterns, and make reports </li>
+    </ul>
+   
+
+<ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-denovo/">IDP-denovo</a> - <i>de novo</i> transcriptome assembly and annotation</li>
+    </ul>
+
+
+<ul>
+      <li><a href="http://www.healthcare.uiowa.edu/labs/au/GenoClone/">GenoClone</a> - Reveal tumor heterogeneity</li>
+    </ul>
+
+
+ <ul>
+      <li><a href="https://github.com/jason-weirather/Au-public">Au lab scripts</a> - Public repository of Au lab scripts and utilities </li>
+    </ul>
+
+
+    <br><ul><center><img src="images/seal.gif" width="75%" hight="75%"><center></ul>
+  </div>
+
+
+
+
+
+<div id="footer">
+    <ul>
+      <li>&copy; <a href=" http://www.healthcare.uiowa.edu/labs/au/">Kin Fai Au</a>.  All Rights Reserved.</li>
+      <li><a href=" http://www.uiowa.edu/">University of Iowa</a>, IA 52242.</li>
+    </ul>
+</div>
+
+  
+<!-- end #content -->
+</body>
+
+
+</html>
