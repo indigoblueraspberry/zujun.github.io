@@ -28,7 +28,7 @@
 <div id="top_navbar">
   <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
    <ul>
-    <li>IDP IS DEVELOPED BY <a href="http://www.healthcare.uiowa.edu/labs/au/">KIN FAI AU</a> with help from collaborators</li>
+    <li>IDP IS DEVELOPED BY <a href="http://www.augroup.org">KIN FAI AU</a> with help from collaborators</li>
   </ul>
   <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
 </div>
@@ -74,13 +74,13 @@
     following these steps, please don't hesitate to <a href="IDP_contact.asp">contact</a> us. </p>
 
     <h3>Requirements</h3>
-    <p>Please note the requiremed software and data files to run IDP (<a heref="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/IDP_requirements.asp">requirements</a>).  For the purpose of the tutorial we will make the required files available to you.<br>
-    Please note when using your own data, that <font color="red">IDP does not use the output of IsoSeq as long read inputs</font>.  The prefered method used by IDP is to use the original long reads error corrcted when appropraite.  See <a href="http://www-stage.healthcare.uiowa.edu/labs/au/IDP/IDP_long_read_file_guide.html">(long read generation)</a> for help.
+    <p>Please note the requiremed software and data files to run IDP (<a heref="http://www.augroup.org/IDP-fusion/IDP_requirements.html">requirements</a>).  For the purpose of the tutorial we will make the required files available to you.<br>
+    Please note when using your own data, that <font color="red">IDP does not use the output of IsoSeq as long read inputs</font>.  The prefered method used by IDP is to use the original long reads error corrcted when appropraite.  See <a href="http://www.augroup.org/IDP/IDP_long_read_file_guide.html">(long read generation)</a> for help.
     
     <h3><img src="images/dna.png">  <b>Step 1</b> - Download and extract the example files</h3>
     <p>You need to download:</p>
     <ul>
-   <a href="IDP_download_current.asp"><img src="images/download.png"><b>The latest release of IDP</b></a><br>
+   <a href="IDP_download_current.org"><img src="images/download.png"><b>The latest release of IDP</b></a><br>
    <p>Uncompress and extract the directory in a location of your choice to get a directory containing IDP executable files.</p>
     <blockquote>
     <pre>
@@ -190,7 +190,7 @@
       <dd>This is a temporary directory created during the execution of IDP. The results of
       the isoform candidate construction and quantification are stored here, so this directory can be quite large. 
       <dt>output directory</dt>
-      <dd>This is directory stores all the useful <a href="IDP_manual.asp#output">output files</a> after executing IDP. It is also 
+      <dd>This is directory stores all the useful <a href="IDP_manual.html#output">output files</a> after executing IDP. It is also 
       created during the execution of IDP.</dd>
 
     </dl>
@@ -211,7 +211,7 @@
     $ ~/IDP_0.1.8/runIDP.py run_LRgpd.cfg 0
     </blockquote>
     <p>These three runs are for three different types of long reads. The second argument is set to 0, because the example data runs end-to-end. 
-	You can change the <a href="IDP_manual.asp#runIDP">mode</a> (the second argument) according to your need.</p>
+	You can change the <a href="IDP_manual.html#runIDP">mode</a> (the second argument) according to your need.</p>
     <blockquote>
  
     </blockquote>
@@ -221,17 +221,17 @@
     All of the output from IDP is automatically copied to the "output" directory. After
     this execution, it should contain:
 
-    Each output file is descired on <a href="IDP_manual.asp#output">maual page</a> in more details:
+    Each output file is descired on <a href="IDP_manual.html#output">maual page</a> in more details:
     <dl>
       <dt>&nbspisoform.gpd</dt>
       <dd>This file contains all gene isoforms identified from detection or prediction. There are overlap between detection and prediction, so isoform.gpd removes the redundant ones. 
-	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>.</dd>
+	It is in <a href="http://www.augroup.org/IDP/IDP_gpd_format.html">gpd format</a>.</dd>
       <dt>&nbspisoform.exp</dt>
       <dd>This file contains the gene/gene isoform abundance. Three columns are seperated by tab: isoform ID, isoform abundance and gene abundance.
 	  The novel isoforms uses their gene loci as the ID, such as chr2:204193002-204296891.1. The last number is the index of the isoform in this gene locus. </dd>
       <dt>&nbspisoform_detection.gpd</dt>
       <dd>This file contains the detections of gene isoforms annotated in the reference annotation (ref_annotation_pathfilename in run.cfg). 
-	It is in <a href="http://www.healthcare.uiowa.edu/labs/au/IDP/IDP_gpd_format.asp">gpd format</a>.</dd>
+	It is in <a href="http://www.augroup.org/IDP/IDP_gpd_format.html">gpd format</a>.</dd>
 	  <dt>&nbspisoform_detection.gpd</dt>
 	  <dd>This file contains the gene isoform predictions. The gene name is denoted as the gene locus (such as chr2:204193002-204296891) and the isoform name is the gene locus with an index (such as chr2:204193002-204296891.1).
 	If an predicted isoform shares junctions with an annotated gene, then this predicted isoform is assigned to this gene as a novel isoform.</dd>
@@ -239,7 +239,7 @@
     </dl>
 	
     <h3><img src="images/dna.png"> <b>Step 6</b> - Learning how to apply this tutorial to your own data</h3>
-   See the <a href="IDP_manual.asp#using">Using IDP</a> section of the manual. 
+   See the <a href="IDP_manual.html#using">Using IDP</a> section of the manual. 
     
   </div>
   
@@ -250,10 +250,10 @@
     <ul>
       <li><a href="default.asp">Home</a></li>
       
-      <li><a href="IDP_download_current.asp">Downloads</a></li>
-      <li><a href="IDP_contact.asp">Contact</a></li>
-      <li><a href="IDP_requirements.asp">Requirements</a></li>
-      <li><a href="IDP_faq.asp">FAQ</a></li>
+      <li><a href="IDP_download_current.html">Downloads</a></li>
+      <li><a href="IDP_contact.html">Contact</a></li>
+      <li><a href="IDP_requirements.html">Requirements</a></li>
+      <li><a href="IDP_faq.html">FAQ</a></li>
   
     </ul>
     <h3>Help</h3>
@@ -261,50 +261,50 @@
       
      
 
-      <li><a href="IDP_manual.asp">Manual</a></li>
-      <li><a href="IDP_tutorial.asp">Tutorial</a></li>
+      <li><a href="IDP_manual.html">Manual</a></li>
+      <li><a href="IDP_tutorial.html">Tutorial</a></li>
       
     </ul>
     <h2>Download</h2>
     <h3>Current release</h3>
     <ul>
-      <li><a href="IDP_download_current.asp"><img src="images/download.png"> IDP 0.1.9</a> (<a href="IDP_download_current.asp#notes">notes</a>)</li>
+      <li><a href="IDP_download_current.html"><img src="images/download.png"> IDP 0.1.9</a> (<a href="IDP_download_current.html#notes">notes</a>)</li>
     </ul>
 
-        <h2>Useful links</h2>
+               <h2>Useful links</h2>
     <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/">Au Lab</a> - Au Lab homepage </li>
+      <li><a href="http://www.augroup.org">Au Lab</a> - Au Lab homepage </li>
     </ul>
     <ul>
       <li><a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> - Novel splice junction discovery</li>
     </ul>
     <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/LSC/">LSC</a> - Error correction of PacBio long reads </li>
+      <li><a href="http://www.augroup.org/LSC/LSC">LSC</a> - Error correction of PacBio long reads </li>
     </ul>
     <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/">IDP</a> - Isoform Detection and Prediction  </li>
+      <li><a href="http://www.augroup.org/IDP/IDP">IDP</a> - Isoform Detection and Prediction  </li>
     </ul>
     <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-ASE/">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
+      <li><a href="http://www.augroup.org/IDP-ASE/IDP-ASE">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
     </ul>
     <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-fusion/">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
+      <li><a href="http://www.augroup.org/IDP-fusion/IDP-fusion">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
     </ul>
     <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP/hESC.asp">hESC transcriptome</a> - hESC transcriptome by IDP </li>
+      <li><a href="http://www.augroup.org/IDP/hESC.html">hESC transcriptome</a> - hESC transcriptome by IDP </li>
     </ul>
     <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/AlignQC/">AlignQC</a> - Check an alignment, assess error patterns, and make reports </li>
+      <li><a href="http://www.augroup.org/AlignQC/alignqc">AlignQC</a> - Check an alignment, assess error patterns, and make reports </li>
     </ul>
    
 
 <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/IDP-denovo/">IDP-denovo</a> - <i>de novo</i> transcriptome assembly and annotation</li>
+      <li><a href="http://www.augroup.org/IDP-denovo.20160829/idp-denovo">IDP-denovo</a> - <i>de novo</i> transcriptome assembly and annotation</li>
     </ul>
 
 
 <ul>
-      <li><a href="http://www.healthcare.uiowa.edu/labs/au/GenoClone/">GenoClone</a> - Reveal tumor heterogeneity</li>
+      <li><a href="http://www.augroup.org/GenoClone/GenoClone/GenoClone">GenoClone</a> - Reveal tumor heterogeneity</li>
     </ul>
 
 
@@ -319,10 +319,11 @@
 
 <div id="footer">
     <ul>
-      <li>&copy; <a href=" http://www.healthcare.uiowa.edu/labs/au/">Kin Fai Au</a>.  All Rights Reserved.</li>
-      <li><a href=" http://www.uiowa.edu/">University of Iowa</a>, IA 52242.</li>
+      <li>&copy; <a href=" http://www.augroup.org">Kin Fai Au</a>. All Rights Reserved.</li>
+      <li><a href="https://www.osu.edu/">The Ohio State University</a>, OH 43210.</li>
     </ul>
 </div>
+  
 
 
 <!-- end #content -->
