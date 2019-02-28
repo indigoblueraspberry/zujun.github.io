@@ -2,61 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-  <title>IDP-fusion contact</title>
 <title>IDP-denovo download</title>
-  
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-<link rel="stylesheet" type="text/css" href="styles/flex_textfont_sans.css" media="all" />
-<!-- SANDSTONE AND TILE TEMPLATE (FLEXIBLE-WIDTH, SANS-SERIF TEXT FONT VERSION) PROVIDED BY STANFORD UNIVERSITY INFORMATION TECHNOLOGY SERVICES FOR NON-DEPARTMENTAL OR UNOFFICIAL USE BY STANFORD FACULTY, STAFF AND STUDENTS. DESIGNED IN 2009 BY DAVE REAM, IT SERVICES. FOR POLICIES AND GUIDELINES ON ACCESSIBILITY, COPYRIGHT, AND ON THE USE OF STANFORD'S NAME AND TRADEMARKS, INCLUDING THE UNIVERSITY SEAL, SEE http://soap.stanford.edu, http://www.stanford.edu/group/identity, and http://adminguide.stanford.edu --> 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-50750315-1', 'uiowa.edu');
-  ga('send', 'pageview');
-</script>
+  <!-- #include file ="asp\header.inc" -->
+  <!-- #include file ="asp\all_track.inc" -->
 </head>
 <body>
 
-<!--BEGIN TOP RED BAR -->
-<div id="top_navbar">
-  <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
-   <ul>
-    <li>IDP-denovo IS DEVELOPED BY <a href="http://www.healthcare.uiowa.edu/labs/au/">KIN FAI AU</a> with help from collaborators</li>
-  </ul>
-  <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
-</div>
-<!-- END TOP RED BAR -->
- 
+
+<!-- #include file="asp\redbar.inc" -->
+
 <div id="content_container">
   <!-- PAGE TITLE AREA AND BOX -->
-<div id="page_title_area">
-    <!-- STANDARD PAGE TITLE; NO DECORATIVE GRAPHIC -->
-    <!-- <div id="page_title_leftcontent"> -->
-    <div id="page_title_leftcontent">
-      <h1>IDP-denovo</h1>
-      <ul>
-        <li>IDP-denovo is a tool for <b><i>de novo</i></b> transcriptome assembly and isoform annotation by hybrid sequencing.</li> 
-      </ul>
-    </div>
-    
-    <div id="page_title_rightcontent">
-	<ul>
 
 
-	    <li>&nbsp;</li>
+  <!-- #include file="asp\titlearea.inc" -->
 
-		<li><img src="images/IDP-denovo.png" width="220" height="200">&nbsp;&nbsp;&nbsp;&nbsp;</li>
-		
-	</ul>
-    </div>
 
-<p class="page_title_area_lower">Latest News:  IDP-denovo_v.1 is released <a href="default.asp#news">read more</a></p>
-    
-    
-  </div>
   <!-- END PAGE TITLE AREA AND BOX -->
   <div id="content">
     <h2>Contact</h2>
