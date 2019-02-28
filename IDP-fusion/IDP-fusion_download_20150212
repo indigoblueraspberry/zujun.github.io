@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>IDP download</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="styles/flex_textfont_sans.css" media="all" />
+<!-- SANDSTONE AND TILE TEMPLATE (FLEXIBLE-WIDTH, SANS-SERIF TEXT FONT VERSION) PROVIDED BY STANFORD UNIVERSITY INFORMATION TECHNOLOGY SERVICES FOR NON-DEPARTMENTAL OR UNOFFICIAL USE BY STANFORD FACULTY, STAFF AND STUDENTS. DESIGNED IN 2009 BY DAVE REAM, IT SERVICES. FOR POLICIES AND GUIDELINES ON ACCESSIBILITY, COPYRIGHT, AND ON THE USE OF STANFORD'S NAME AND TRADEMARKS, INCLUDING THE UNIVERSITY SEAL, SEE http://soap.stanford.edu, http://www.stanford.edu/group/identity, and http://adminguide.stanford.edu --> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50750315-1', 'uiowa.edu');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+
+
+<!--BEGIN TOP RED BAR -->
+<div id="top_navbar">
+  <!-- OPTIONAL TOP NAVIGATION OR TEXT AREA INSIDE RED BAR; BAR EXPANDS HEIGHT AUTOMATICALLY TO ACCOMMODATE CONTENT -->
+   <ul>
+    <li>IDP-ASE IS DEVELOPED BY <a href="http://www.augroup.org/">KIN FAI AU</a> with help from collaborators</li>
+  </ul>
+  <!-- END OF OPTIONAL TOP RED BAR CONTENT -->
+</div>
+<!-- END TOP RED BAR -->
+
+<div id="content_container">
+  <!-- PAGE TITLE AREA AND BOX -->
+
+ <div id="page_title_area">
+    <!-- STANDARD PAGE TITLE; NO DECORATIVE GRAPHIC -->
+    <!-- <div id="page_title_leftcontent"> -->
+    <div id="page_title_leftcontent">
+      <h1>IDP-fusion</h1>
+      <ul>
+        <li>IDP-fusion is a tool for <b>Isoform Detection and Prediction for Fusion Genes</b> <br> from Second Generation Sequencing and PacBio sequencing. 
+        It offers very <br> reliable gene isoform identification 
+		with high sensitivity <br>
+
+      </ul>
+    </div>
+    
+    <div id="page_title_rightcontent">
+	<ul>
+
+
+	    <li>&nbsp;</li>
+
+		<li><img src="images/IDP-fusion.png" width="300" >&nbsp;&nbsp;&nbsp;&nbsp;</li>
+		
+	</ul>
+    </div>
+
+<p class="page_title_area_lower">Latest News:  IDP-fusion_20161024 is released <a href="IDP-fusion.html#news">read more</a></p>
+    
+    
+  </div>
+
+  <!-- END PAGE TITLE AREA AND BOX -->
+  <div id="content">
+    <h2>Downloads</h2>
+    <p>
+    Copyright and installation instructions are contained within the package. We <b>strongly
+    recommend</b> that you consult the <a href="IDP-fusion_tutorial.html">tutorial</a> before attempting to use IDP. 
+    </p>
+        
+    <table border="1" cellpadding="1">
+    <tr>
+    <td>
+    <a href="files/IDP-fusion_20150212.tar.gz"  onClick="ga('send', 'event', 'file download', 'click', 'IDP fusion download release');"><img src="images/download.png"><b>IDP-fusion 20150212</b></a>
+    </td>
+     <td>
+    Please see the <a href="IDP-fusion_download_current.html#notes">release notes</a> for 
+    more information
+    </td>
+    </tr>
+
+    
+    </table>
+	
+    <div id="notes">
+    <h3><img src="images/dna.png">  <b>IDP-fusion 20150212</b> - Release Notes</h3>
+    </div>
+   <p>
+   IDP-fusion integrates short reads (e.g. Illumina data) and long reads (e.g. PacBio data) to identify fusion-gene isoforms (transcripts) from a transcriptome.<br>
+
+  
+    </p>
+ 
+
+  </div>
+  
+  
+<div id="sidebar">
+    <h2>Site Map</h2>
+    <ul>
+      <li><a href="IDP-fusion.html">Home</a></li>
+      
+      <li><a href="IDP-fusion_download_current.html">Downloads</a></li>
+      <li><a href="IDP-fusion_contact.html">Contact</a></li>
+      <li><a href="IDP-fusion_requirements.html">Requirements</a></li>
+      <li><a href="IDP-fusion_howitworks.html">How it works?</a></li>
+<li><a href="IDP-fusion_long_read_file_guide.html">Long read file guide</a></li>
+<li><a href="IDP-fusion_cfg.html">CFG file format</a></li>
+
+
+  <li><a href="IDP-fusion_faq.html">FAQ</a></li>
+
+    </ul>
+    <h3>Help</h3>
+    <ul>
+      
+     
+
+      <li><a href="IDP-fusion_manual.html">Manual</a></li>
+      <li><a href="IDP-fusion_tutorial.html">Tutorial</a></li>
+      
+    </ul>
+    <h2>Download</h2>
+    <h3>Current release</h3>
+    <ul>
+      <li><a href="IDP-fusion_download_current.html"><img src="images/download.png"> IDP-fusion 1.1.1 </a> (<a href="IDP-fusion_download_current.html#notes">notes</a>)</li>
+    </ul>
+
+        <h2>Useful links</h2>
+    <ul>
+      <li><a href="http://www.augroup.org">Au Lab</a> - Au Lab homepage </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.stanford.edu/group/wonglab/SpliceMap/">SpliceMap</a> - Novel splice junction discovery</li>
+    </ul>
+    <ul>
+      <li><a href="http://www.augroup.org/LSC/LSC">LSC</a> - Error correction of PacBio long reads </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.augroup.org/IDP/IDP">IDP</a> - Isoform Detection and Prediction  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.augroup.org/IDP-ASE/IDP-ASE">IDP-ASE</a> - Determine haplotypes and quantify allele specific expression  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.augroup.org/IDP-fusion/IDP-fusion">IDP-Fusion</a> - Isoform Detection and Prediction across fusion genes  </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.augroup.org/IDP/hESC.html">hESC transcriptome</a> - hESC transcriptome by IDP </li>
+    </ul>
+    <ul>
+      <li><a href="http://www.augroup.org/AlignQC/alignqc">AlignQC</a> - Check an alignment, assess error patterns, and make reports </li>
+    </ul>
+	
+<ul>
+      <li><a href="http://www.augroup.org/IDP-denovo.20160829/idp-denovo">IDP-denovo</a> - <i>de novo</i> transcriptome assembly and annotation</li>
+    </ul>
+
+
+<ul>
+      <li><a href="http://www.augroup.org/GenoClone/GenoClone/GenoClone">GenoClone</a> - Reveal tumor heterogeneity</li>
+    </ul>
+	
+
+ <ul>
+      <li><a href="https://github.com/jason-weirather/Au-public">Au lab scripts</a> - Public repository of Au lab scripts and utilities </li>
+    </ul>
+
+
+    <br><ul><center><img src="images/seal.jpg" width="75%" hight="75%"><center></ul>
+  </div>
+
+
+
+
+</div><div id="footer">
+    <ul>
+      <li>&copy; <a href=" http://www.augroup.org">Kin Fai Au</a>. All Rights Reserved.</li>
+      <li><a href="https://www.osu.edu/">The Ohio State University</a>, OH 43210.</li>
+    </ul>
+</div>
+  
+<!-- end #content -->
+</body>
+
+</html>
