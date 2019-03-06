@@ -85,7 +85,7 @@
 	<p>Then check the commond of GenoClone.
    </p>
     <blockquote>
-    <pre>
+
      $ GenoClone/bin/GenoClone -h
      <b>usage</b>: GenoClone [-h] -o OUTPUT
                  [--tempdir TEMPDIR | --specific_tempdir SPECIFIC_TEMPDIR]
@@ -110,7 +110,7 @@
      --specific_tempdir SPECIFIC_TEMPDIR
                         This temporary directory will be used, but will remain
                         after executing. (default: None)
-    </pre>
+
     </blockquote
 	
     <h3><img src="images/dna.png">  <b>Input data</b></h3>
@@ -128,18 +128,18 @@
     <p><b> Step 1.</b> Use VarScan to obtain the total mutations:
 	</p>
 	<blockquote>
-    <pre>
+
           $ samtools mpileup -q 1 -f Reference.fasta Tumor.bam >tumor.pileup
 	  $ samtools mpileup -q 1 -f Reference.Genome Normal.bam >tumor.pileup
 	  $ java -jar varScan somatic normal.pileup tumor.pileup --output-vcf 1 --output-snp total_mutations.vcf
-    </pre>
+
     </blockquote> 
 	<p><b> Step 2.</b> Use GenoClone to infer subclones:
 	</p>
 	<blockquote>
-    <pre>
+
           $ /GenoClone/bin/GenoClone total_mutations.vcf Tumor.bam -o Tumor
-    </pre>
+
     </blockquote> 
 	
 	
