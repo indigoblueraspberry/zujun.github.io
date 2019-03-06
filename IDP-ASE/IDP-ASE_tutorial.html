@@ -67,7 +67,6 @@
 <!-- END PAGE TITLE AREA AND BOX -->
 <div id="content">
   <h2>Tutorial</h2>
-  <div id="content">
   This setup guide is in progress. For now see the <a href="https://github.com/bdeonovic/IDPASE.jl">Github</a>.
 
   <h3><img src="images/dna.png">  <b>Step 1</b> - Prepare Gene level data</h3>
@@ -96,7 +95,8 @@
   <h3><img src="images/dna.png">  <b>Step 5</b> - Prepare isoform level data</h3>
   <pre> julia ~/.julia/v0.4/IDPASE/src/prep_runs.jl -a test_data/SGS.psl test_data/TGS.psl \
           -g test_data/TDRKH.gpd -v test_data/sim.vcf -q test_data/SGS.fq test_data/TGS.fq \
-          -d ~/temp/ -c 1 -f 1 1 -o ~/isoform_files/ -p sim -l 100 -i -s -e -r ~/gene_out/gene_results.txt
+          -d ~/temp/ -c 1 -f 1 1 -o ~/isoform_files/ -p sim -l 100 -i -s -e -r ~/gene_out/ \
+	  gene_results.txt
   </pre>
   where -l is read length for short reads, -s to skip file pre-processing (if using same GPD/VCF files are gene level), -e to use estimated haplotypes from gene leve, otherwise will use information from VCF, asumming it is phased, -r is the gene level results file.
 
@@ -112,7 +112,7 @@
   <pre> find ~/isoform_out/ -name "EXTRA*" | xargs cat > ~/isoform_results.txt</pre>
 </div>
 
-</div>
+
   
 
  
