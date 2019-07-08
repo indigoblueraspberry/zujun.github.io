@@ -101,7 +101,7 @@
     <div id="using">
     <h3><img src="images/dna.png"> Using IDP</h3>
     </div>
-    <p>Firstly, see the <a href="IDP_tutorial.html">tutorial</a> on how to use IDP on some example data.</p>
+    <p>Firstly, see the <a href="http://www.augroup.org/IDP/IDP_tutorial.html">tutorial</a> on how to use IDP on some example data.</p>
     <p>
     In order to use IDP on your own data:
     </p><ol>
@@ -109,16 +109,16 @@
     
     <li>Copy "run.cfg" from the IDP package to the working directory. </li>
     
-    <li><a href="IDP_cfg.html">Edit run.cfg</a> to include paths to data files and the paths of the temp folder and the output folder. 
+    <li><a href="IDP-fusion_cfg.html">Edit run.cfg</a> to include paths to data files and the paths of the temp folder and the output folder. 
 	You may also want to configure the default settings. Reference annotation can be used in IDP for isoform candidate constructions. In this construction process, a few parameters are needed as well. 
     For these parameters, the run.cfg included with the software contains the optimal setting for human transcriptome.
-	If you want to run the other species, please <a href="IDP_contact.asp">contact</a> Kin Fai for suggestion.
+	If you want to run the other species, please <a href="IDP-fusion_contact.asp">contact</a> Kin Fai for suggestion.
 	</li>
     <li>Edit "constants.py" for a few "data parameters". Please see the section "Module: constants.py" below for more details</li>	
-    <li>Execute "<a href="IDP_manual.html#runIDP">/home/user/IDP_path/runIDP.py run.cfg mode_number</a>" while in your working directory. or Execute "<a href="IDP_manual.html#runIDP">runIDP.py run.cfg mode_number</a>, if all IDP executable files are in the default bin.
+    <li>Execute "<a href="IDP-fusion_manual.html#runIDP">/home/user/IDP_path/runIDP.py run.cfg mode_number</a>" while in your working directory. or Execute "<a href="IDP-fusion_manual.html#runIDP">runIDP.py run.cfg mode_number</a>, if all IDP executable files are in the default bin.
 "mode_number" can be 1,2,3. Please see how to select mode_number in the section "Module: runIDP.py" below.</li>
 
-    <li>After <a href="IDP_manual.html#time">a certain time</a> execution will conclude. You can find results in the "output" directory. </li>
+    <li>After <a href="IDP-fusion_manual.html#time">a certain time</a> execution will conclude. You can find results in the "output" directory. </li>
     
     </ol>
     <p></p>
@@ -129,8 +129,8 @@
     </div>
     <p>"runIDP.py" is the main program in the IDP package. It calls other modules 
     to run the full isoform identification and quantification on your data. Output is written to the "output" folder. 
-    Details of the output are described in <a href="IDP_manual.html#fileformats">file formats</a>.
-    Its options are described in <a href="IDP_cfg.html">run.cfg</a>. You just need to run "runIDP.py" with a configuration file "run.cfg" and a mode_number: </p>
+    Details of the output are described in <a href="IDP-fusion_manual.html#fileformats">file formats</a>.
+    Its options are described in <a href="IDP-fusion_cfg.html">run.cfg</a>. You just need to run "runIDP.py" with a configuration file "run.cfg" and a mode_number: </p>
     <blockquote>
     /home/user/IDP_path/runIDP.py run.cfg mode_number
     </blockquote>
